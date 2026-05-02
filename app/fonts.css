@@ -1,0 +1,18 @@
+/*
+ * next/font sets --ff-montserrat / --ff-monument on <html> via the
+ * `variable` option in fonts.ts. The public --font-* tokens and the
+ * Tailwind-generated `font-montserrat` / `font-monument` utilities are
+ * registered via the @theme block in globals.css.
+ *
+ * This file holds the manual `font-{name}-{weight}` utility classes.
+ */
+
+/* ---------- Montserrat ---------- */
+.font-montserrat-400 { font-family: var(--font-montserrat); font-weight: 400; }
+.font-montserrat-500 { font-family: var(--font-montserrat); font-weight: 500; }
+.font-montserrat-600 { font-family: var(--font-montserrat); font-weight: 600; }
+.font-montserrat-700 { font-family: var(--font-montserrat); font-weight: 700; }
+
+/* ---------- Monument (only Regular + Ultrabold provided) ---------- */
+.font-monument-400 { font-family: var(--font-monument); font-weight: 400; }
+.font-monument-700 { font-family: var(--font-monument); font-weight: 700; }
