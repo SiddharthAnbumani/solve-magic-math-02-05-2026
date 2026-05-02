@@ -22,10 +22,11 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="h-full flex justify-center items-center">
-        <div className="hidden md:flex items-center space-x-8 text-xl uppercase font-monument-400 text-indigo-700 ">
-          <Link href="/products" className="hover:text-indigo-900">Products</Link>
-          <Link href="/services" className="hover:text-indigo-900">Web Studio</Link>
+        <div className="hidden md:flex items-center space-x-8 text-lg uppercase font-monument-400 text-indigo-700 ">
+          <Link href="/programs" className="hover:text-indigo-900">Programs</Link>
+          <Link href="/services" className="hover:text-indigo-900">Tuition</Link>
           <Link href="/pricing" className="hover:text-indigo-900">Pricing</Link>
+          <Link href="/gallery" className="hover:text-indigo-900">Gallery</Link>
           <Link href="/about" className="hover:text-indigo-900">About Us</Link>
           <Link href="/contact" className="hover:text-indigo-900">Contact Us</Link>
         </div>

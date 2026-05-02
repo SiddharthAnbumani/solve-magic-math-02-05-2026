@@ -247,31 +247,54 @@ export default function Home() {
       </section>
 
       {/* RESULTS */}
-      <section className="py-20 lg:py-28 bg-slate-950 text-white">
+      <section className="py-20 lg:py-28 bg-indigo-700 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="inline-block font-montserrat-600 text-xs uppercase tracking-widest text-indigo-700">
+          <div className="max-w-3xl">
+            <span className="inline-block font-montserrat-700 text-lg uppercase tracking-widest text-red-500">
               What kids walk away with
             </span>
-            <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+            <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-wide">
               Results you&apos;ll actually notice at home.
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {RESULTS.map(({ icon: Icon, title, text }) => (
-              <div
-                key={title}
-                className="p-7 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-700/60 transition"
-              >
-                <div className="w-12 h-12 rounded-xl bg-indigo-700 text-slate-900 inline-flex items-center justify-center">
-                  <Icon size={22} strokeWidth={1.75} />
-                </div>
-                <h3 className="mt-6 font-monument-700 text-xl">{title}</h3>
-                <p className="mt-2 font-montserrat-400 text-sm leading-relaxed text-slate-300">
-                  {text}
-                </p>
-              </div>
-            ))}
+{RESULTS.map(({ icon: Icon, title, text, image }) => (
+  <div key={title} className="group relative">
+    
+    {/* Layer 1 */}
+    <div className="absolute inset-0 rounded-2xl bg-indigo-700/10 translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300" />
+
+    {/* Image Layer */}
+    <div className="absolute inset-0 rounded-2xl overflow-hidden translate-x-1.5 translate-y-1.5 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300">
+      <img
+        src='_.webp'
+        alt={title}
+        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-xs group-hover:bg-black/30 transition" />
+    </div>
+
+    {/* Content Layer */}
+    <div className="relative h-[280px] p-6 flex flex-col justify-end rounded-2xl text-white">
+      
+      {/* Icon */}
+      <div className="mb-3 w-10 h-10 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center">
+        <Icon size={20} />
+      </div>
+
+      {/* Title */}
+      <h3 className="font-monument-700 text-xl">
+        {title}
+      </h3>
+
+      {/* Text */}
+      <p className="mt-2 text-sm font-montserrat-500 text-white/80">
+        {text}
+      </p>
+    </div>
+  </div>
+))}
           </div>
         </div>
       </section>
