@@ -25,24 +25,28 @@ const PROGRAMS = [
     title: 'Abacus',
     description:
       'Faster mental arithmetic and sharper concentration through structured visual training.',
+    image: '/programs/abacus.webp',
   },
   {
     icon: Box,
     title: "Rubik's Cube",
     description:
       'Spatial reasoning, pattern recognition, and that proud "I solved it" moment.',
+    image: '/programs/rubiks.webp',
   },
   {
     icon: BookOpen,
     title: 'Vedic Maths',
     description:
       'Ancient shortcuts that turn long calculations into seconds — perfect for school exams.',
+    image: '/programs/vedic.webp',
   },
   {
     icon: GraduationCap,
     title: 'Tuition',
     description:
       'Personalised academic support across CBSE, State Board and ICSE syllabi.',
+    image: '/programs/tuition.webp',
   },
 ] as const
 
@@ -115,9 +119,9 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden mt-20">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(67,56,202,0.12),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-28">
+        <div className="mx-auto max-w- px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-28">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 order-2 lg:order-1">
               {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800 text-md borde text-white  border-white font-montserrat-500 ">
                 <Sparkles size={12} /> Brain Development for Ages 5–16
               </span> */}
@@ -126,7 +130,7 @@ export default function Home() {
                 Start Right{' '}
                 <span className="relative inline-block ">
                   <span className="relative z-10 text-indigo-700">Here</span>
-                  <span className="absolute inset-x-0 bottom-1 h-3 bg-black z-0 rounded-sm" />
+                  {/* <span className="absolute inset-x-0 bottom-1 h-3 bg-black z-0 rounded-sm" /> */}
                 </span>
                 .
               </h1>
@@ -161,7 +165,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 order-1 lg:order-2">
               <div className="relative aspect-square max-w-md mx-auto">
                 <div className="absolute inset-0 rounded-3xl bg-slate-900 rotate-3" />
                 <div className="absolute inset-0 rounded-3xl bg-indigo-700 -rotate-3" />
@@ -258,7 +262,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-{RESULTS.map(({ icon: Icon, title, text, image }) => (
+{RESULTS.map(({ icon: Icon, title, text }) => (
   <div key={title} className="group relative">
     
     {/* Layer 1 */}

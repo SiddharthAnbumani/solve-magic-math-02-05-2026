@@ -18,21 +18,18 @@ const PROGRAMS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-indigo-700 text-slate-300">
-      <div className="mx-auto  px-4 sm:px-6 lg:px-8 py-16">
-
+    <footer className=" text-slate-300">
+      <div className="mx-auto  px-4 sm:px-6 lg:px-8 py-16 bg-indigo-700">
         <div className="flex flex-col lg:flex-row gap-12 lg:items-center">
           
           {/* 🔥 LEFT LOGO AREA */}
-          <div className="w-full lg:w-3/12 flex flex-col justify-between">
+          <div className="w-full lg:w-4/12 flex flex-col justify-between">
             
             {/* Logo */}
             <Link href="/" className="block">
-              <Image
-                src="/logo_white.png" // replace with your logo path
+              <img
+                src="/image.png" // replace with your logo path
                 alt="Magic Maths"
-                width={200}
-                height={80}
                 className="object-cover"
               />
             </Link>
@@ -46,7 +43,7 @@ export default function Footer() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="w-full lg:w-9/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="w-full lg:w-8/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             
             {/* Quick Links */}
             <div>
@@ -123,18 +120,18 @@ export default function Footer() {
 
           </div>
         </div>
-
-        {/* Bottom */}
-        <div className="bg-whit mt-14 pt-8 border-t border-slate-800/80 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          
-          <p className="font-montserrat-400 text-xs text-slate-500">
+        
+      </div>
+      <div className="bg-red-800 flex flex-col items-center justify-end py-10">
+          <p className="font-monument-400 text-center text-white text-4xl tracking-wider ">
+            Building Smarter, Confident Young Minds.
+          </p>
+    
+      </div>
+      <div className="flex justify-center bg-red-800 pb-10">
+              <p className="font-montserrat-600  text-white/70 text-lg">
             © {new Date().getFullYear()} Magic Maths. All rights reserved.
           </p>
-
-          <p className="font-montserrat-400 text-xs text-slate-500">
-            Building smarter, confident young minds.
-          </p>
-        </div>
       </div>
     </footer>
   )

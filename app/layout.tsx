@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "Solve Magic Maths — Abacus, Rubik's Cube, Vedic Maths & Tuition",
+  title: "Magic Maths - Educational Instituition",
   description:
     "Brain-development classes for kids ages 5–16. Small batches, experienced trainers, real results. Book a free demo today.",
 };
