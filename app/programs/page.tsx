@@ -16,11 +16,11 @@ export default function ProgramsPage() {
     <main className="bg-white">
       {/* HERO */}
 <section className="bg-indigo-700 text-white min-h-150 flex flex-col justify-center items-center text-center">
-  <h1 className="text-5xl font-monument-700 uppercase tracking-wider">
+  <h1 className="text-3xl lg:text-5xl font-monument-700 uppercase tracking-wider">
     Our Programs
   </h1>
 
-  <p className="mt-4 font-montserrat-600 text-2xl">
+  <p className="mt-4 font-montserrat-600 text-xl lg:text-2xl">
     Four Programs,{" "}
     <span className="text-red-400">One Sharper Mind</span>
   </p>

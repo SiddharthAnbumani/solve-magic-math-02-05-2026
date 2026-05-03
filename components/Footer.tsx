@@ -43,19 +43,19 @@ export default function Footer() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="w-full lg:w-8/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="w-full lg:w-8/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10 sm:mt-0">
             
             {/* Quick Links */}
-            <div>
-              <h4 className="font-monument-700 text-xs uppercase tracking-widest text-white">
+            <div className='flex flex-col items-center justify-center'>
+              <h4 className="font-monument-700 text-[15px] uppercase tracking-widest text-white">
                 Quick Links
               </h4>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-5 space-y-3 text-center">
                 {QUICK_LINKS.map((l) => (
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="font-montserrat-400 text-sm text-slate-400 hover:text-white transition"
+                      className="text-center font-montserrat-600 text-[15px] text-white/90 hover:text-white transition"
                     >
                       {l.label}
                     </Link>
@@ -65,16 +65,16 @@ export default function Footer() {
             </div>
 
             {/* Programs */}
-            <div>
-              <h4 className="font-monument-700 text-xs uppercase tracking-widest text-white">
+            <div className='flex flex-col items-center justify-center'>
+              <h4 className="font-monument-700 text-[15px] uppercase tracking-widest text-white">
                 Programs
               </h4>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-5 space-y-3 text-center">
                 {PROGRAMS.map((l) => (
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="font-montserrat-400 text-sm text-slate-400 hover:text-white transition"
+                      className="  font-montserrat-600 text-[15px] text-white/90 hover:text-white transition"
                     >
                       {l.label}
                     </Link>
@@ -84,31 +84,30 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div>
-              <h4 className="font-monument-700 text-xs uppercase tracking-widest text-white">
+            <div className='flex flex-col items-center justify-center'>
+              <h4 className="font-monument-700 text-[15px] uppercase tracking-widest text-white">
                 Contact
               </h4>
-              <ul className="mt-5 space-y-4 text-sm">
-                
-                <li className="flex items-start gap-3 text-slate-400">
-                  <Phone size={16} className="mt-0.5 shrink-0 text-indigo-400" />
-                  <a href="tel:+917550223044" className="hover:text-white transition">
+              <ul className="mt-5 space-y-4 text-[15px] text-center">
+                <li className="flex items-start gap-3 text-white/90 font-montserrat-600 ">
+                  <Phone size={16} className="mt-0.5 shrink-0 text-red-400" />
+                  <a href="tel:+917550223044" className="hover:text-white text-white/90 transition">
                     +91 75502 23044
                   </a>
                 </li>
 
                 <li className="flex items-start gap-3 text-slate-400">
-                  <Mail size={16} className="mt-0.5 shrink-0 text-indigo-400" />
+                  <Mail size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <a
                     href="mailto:hello@magicmaths.in"
-                    className="hover:text-white transition"
+                    className="hover:text-white transition text-white/90  font-montserrat-600"
                   >
                     hello@magicmaths.in
                   </a>
                 </li>
 
-                <li className="flex items-start gap-3 text-slate-400">
-                  <MapPin size={16} className="mt-0.5 shrink-0 text-indigo-400" />
+                <li className="flex items-start gap-3 text-white/90 font-montserrat-600">
+                  <MapPin size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <span>
                     Anna Nagar Center,
                     <br />
@@ -122,13 +121,13 @@ export default function Footer() {
         </div>
         
       </div>
-      <div className="bg-red-800 flex flex-col items-center justify-end py-10">
-          <p className="font-monument-400 text-center text-white text-4xl tracking-wider ">
+      <div className="bg-indigo-900 flex flex-col items-center justify-end py-10">
+          <p className="font-monument-400 text-center text-white text-[20px] px-2 lg:text-4xl tracking-wider ">
             Building Smarter, Confident Young Minds.
           </p>
     
       </div>
-      <div className="flex justify-center bg-red-800 pb-10">
+      <div className="flex justify-center items-center bg-red-800 py-5">
               <p className="font-montserrat-600  text-white/70 text-lg">
             © {new Date().getFullYear()} Magic Maths. All rights reserved.
           </p>

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Brain, Target, Users, Award } from 'lucide-react'
+import { Brain, Target, Users, Award, MapPin, Star } from 'lucide-react'
 import FounderSection from '@/components/founderSection'
 
 const fadeUp = {
@@ -12,7 +12,7 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white text-black pt-30">
+    <div className="bg-white text-slate-900 pt-28">
 
       {/* HERO */}
       <section className="px-6 sm:px-10 lg:px-20 py-16 text-center">
@@ -20,7 +20,7 @@ export default function AboutPage() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="font-monument-700 text-4xl sm:text-5xl text-indigo-700"
+          className="font-monument-700 text-4xl sm:text-5xl lg:text-6xl text-indigo-700 tracking-tight"
         >
           About Magic Maths
         </motion.h1>
@@ -29,52 +29,47 @@ export default function AboutPage() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-4 max-w-2xl mx-auto text-gray-600 font-montserrat-400"
+          className="mt-5 max-w-2xl mx-auto text-slate-600 text-lg leading-relaxed"
         >
-          We help children build strong mental abilities through structured
-          learning programs like Abacus, Vedic Maths, Rubik’s Cube and Tuition.
+          We help children unlock their full mental potential through
+          Abacus, Vedic Maths, Rubik’s Cube and personalised tuition.
         </motion.p>
       </section>
 
-      {/* STORY SECTION */}
+      {/* STORY */}
       <section className="px-6 sm:px-10 lg:px-20 py-16">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
 
-          {/* TEXT */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            className="lg:w-1/2"
           >
             <h2 className="font-monument-700 text-2xl text-indigo-700">
               Our Story
             </h2>
 
-            <p className="mt-4 text-gray-600 font-montserrat-400 leading-relaxed">
-              Magic Maths was founded with a simple mission — to make learning
-              enjoyable and effective for children. We noticed that traditional
-              teaching methods often fail to engage young minds, so we built a
-              system that focuses on interaction, speed, and confidence.
+            <p className="mt-5 text-slate-600 leading-relaxed">
+              Magic Maths was built with a simple idea — learning should be
+              engaging, fast and confidence-building.
             </p>
 
-            <p className="mt-4 text-gray-600 font-montserrat-400 leading-relaxed">
-              Our programs are designed to strengthen concentration, memory,
-              and logical thinking, helping students excel not just in academics
-              but in life.
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              Instead of traditional methods, we focus on interaction,
+              visualisation and structured progression — helping children
+              develop real mental strength.
             </p>
           </motion.div>
 
-          {/* IMAGE */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
-            className="relative w-full h-[300px] sm:h-[400px] rounded-2xl overflow-hidden"
+            className="relative lg:w-1/2 h-[320px] sm:h-[420px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="/about.jpg" // replace with your image
+              src="/about.jpg"
               alt="Students learning"
               fill
               className="object-cover"
@@ -83,113 +78,147 @@ export default function AboutPage() {
 
         </div>
       </section>
-            <section>
-        <FounderSection/>
-      </section>
 
-      {/* VALUES */}
-      <section className="px-6 sm:px-10 lg:px-20 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      {/* FOUNDER */}
+      <FounderSection />
+{/*  */}
 
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            className="text-center font-monument-700 text-2xl text-indigo-700"
-          >
-            What We Focus On
-          </motion.h2>
+      {/* TESTIMONIALS */}
+      <section className="py-24 bg-red-800 text-white">
+  <div className="px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto">
 
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {/* Heading */}
+    <div className="max-w-2xl">
+      <h2 className="font-monument-700 text-3xl sm:text-4xl">
+        What Parents Notice First
+      </h2>
 
-            {[
-              {
-                icon: Brain,
-                title: 'Brain Development',
-                text: 'Improve memory, speed and concentration.',
-              },
-              {
-                icon: Target,
-                title: 'Focused Learning',
-                text: 'Small batches with personal attention.',
-              },
-              {
-                icon: Users,
-                title: 'Confidence Building',
-                text: 'Encourage students to think independently.',
-              },
-              {
-                icon: Award,
-                title: 'Proven Methods',
-                text: 'Structured curriculum with real results.',
-              },
-            ].map(({ icon: Icon, title, text }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="p-6 rounded-xl border border-gray-200 bg-white hover:border-indigo-600 transition"
-              >
-                <div className="w-12 h-12 rounded-xl bg-indigo-700 text-white flex items-center justify-center">
-                  <Icon size={22} />
-                </div>
+      <p className="mt-4 text-white/80 font-montserrat-400">
+        Real changes, real confidence — within weeks.
+      </p>
+    </div>
 
-                <h3 className="mt-5 font-monument-700 text-lg text-indigo-700">
-                  {title}
-                </h3>
+    {/* Testimonials */}
+    <div className="mt-14 grid md:grid-cols-3 gap-6">
 
-                <p className="mt-2 text-gray-600 text-sm font-montserrat-400">
-                  {text}
-                </p>
-              </motion.div>
-            ))}
+      {[
+        {
+          text: "Within 2 months, my daughter started doing calculations faster than me.",
+          name: "Priya, Anna Nagar",
+        },
+        {
+          text: "He used to hate maths. Now it’s his favourite subject.",
+          name: "Karthik, Velachery",
+        },
+        {
+          text: "The confidence boost is unbelievable. Not just marks — mindset changed.",
+          name: "Meena, OMR",
+        },
+      ].map((t, i) => (
+        <div
+          key={i}
+          className="h-full flex flex-col justify-between p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition"
+        >
+          <p className="text-sm leading-relaxed text-white/90">
+            “{t.text}”
+          </p>
 
+          <div className="mt-6 flex items-center justify-between">
+            <span className="text-sm font-montserrat-600">
+              {t.name}
+            </span>
+
+            {/* rating dots */}
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 bg-yellow-400 rounded-full"
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      ))}
 
+    </div>
 
-      {/* PROGRAMS */}
-      <section className="px-6 sm:px-10 lg:px-20 py-16">
-        <div className="max-w-7xl mx-auto text-center">
+  </div>
+</section>
 
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            className="font-monument-700 text-2xl text-indigo-700"
-          >
-            Our Programs
-          </motion.h2>
+      {/* BRANCHES */}
+<section className="py-28 bg-white">
+  <div className="px-6 sm:px-10 lg:px-20 max-w-8xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
 
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {/* LEFT SIDE (STATEMENT) */}
+    <div>
+      <h2 className="font-monument-700 text-4xl sm:text-5xl text-indigo-700 leading-tight">
+        Across Chennai.
+        <br />
+        <span className="text-slate-900">Closer than you think.</span>
+      </h2>
 
-            {['Abacus', "Rubik's Cube", 'Vedic Maths', 'Tuition'].map((p) => (
-              <motion.div
-                key={p}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                className="p-6 rounded-xl border border-gray-200 hover:border-red-800 transition"
-              >
-                <h3 className="font-monument-700 text-lg text-indigo-700">
-                  {p}
-                </h3>
-                <p className="mt-2 text-gray-600 text-sm">
-                  Structured training for better performance.
-                </p>
-              </motion.div>
-            ))}
+      <p className="mt-6 text-slate-600 max-w-md leading-relaxed font-montserrat-400">
+        Wherever you are, there’s a Magic Maths center nearby — with the same
+        teaching quality, same focus, and the same results parents trust.
+      </p>
 
+      <a
+        href="/contact"
+        className="inline-block mt-8 font-monument text-sm text-indigo-700 hover:underline"
+      >
+        Find your nearest branch →
+      </a>
+    </div>
+
+    {/* RIGHT SIDE (BRANCH LIST) */}
+    <div className="space-y-6">
+
+      {[
+        {
+          name: "Anna Nagar",
+          sub: "Flagship center · 120+ students",
+        },
+        {
+          name: "Velachery",
+          sub: "Top rated by parents",
+        },
+        {
+          name: "OMR",
+          sub: "Fast growing center",
+        },
+        {
+          name: "Tambaram",
+          sub: "New batches open",
+        },
+      ].map((b, i) => (
+        <div
+          key={b.name}
+          className="group flex items-center justify-between border-b border-slate-200 pb-4"
+        >
+          <div>
+            <h3 className="font-monument-600 text-xl text-slate-900 group-hover:text-indigo-700 transition">
+              {b.name}
+            </h3>
+            <p className="text-sm text-slate-500 mt-1">
+              {b.sub}
+            </p>
           </div>
-        </div>
-      </section>
 
+          {/* subtle arrow */}
+          <span className="text-slate-400 group-hover:translate-x-1 transition">
+            →
+          </span>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
       {/* CTA */}
       <section className="px-6 sm:px-10 lg:px-20 pb-20">
-        <div className="max-w-4xl mx-auto bg-indigo-700 text-white rounded-2xl p-10 text-center">
+        <div className="max-w-4xl mx-auto bg-indigo-700 text-white rounded-3xl p-10 text-center">
 
           <h2 className="font-monument-700 text-2xl">
             Ready to Transform Learning?
@@ -201,9 +230,9 @@ export default function AboutPage() {
 
           <a
             href="/contact"
-            className="inline-block mt-5 bg-red-800 px-6 py-2 rounded-lg font-montserrat-600 hover:bg-red-700 transition"
+            className="inline-block mt-6 bg-red-800 px-6 py-3 rounded-full font-montserrat-600 hover:bg-red-700 transition"
           >
-            Book Now
+            Book Free Demo
           </a>
 
         </div>
