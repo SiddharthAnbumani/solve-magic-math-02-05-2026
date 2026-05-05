@@ -1,12 +1,27 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Check, Phone } from 'lucide-react'
 import type { Program } from '@/data/programs'
+import CubeModuleCard, { type CubeModule } from '@/components/CubeModuleCard'
 
 const PHONE = '+917550223044'
 const WHATSAPP =
   'https://wa.me/917550223044?text=Hi%2C%20I%27m%20interested%20in%20a%20free%20demo'
 
-export default function ProgramPageTemplate({ program }: { program: Program }) {
+type Props = {
+  program: Program
+  modules?: CubeModule[]
+  modulesEyebrow?: string
+  modulesTitle?: string
+  modulesSubtitle?: string
+}
+
+export default function ProgramPageTemplate({
+  program,
+  modules,
+  modulesEyebrow,
+  modulesTitle,
+  modulesSubtitle,
+}: Props) {
   const Icon = program.icon
 
   return (
@@ -110,6 +125,33 @@ export default function ProgramPageTemplate({ program }: { program: Program }) {
           </aside>
         </div>
       </section>
+
+      {/* MODULES (optional) */}
+      {modules && modules.length > 0 && (
+        <section className="py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <span className="inline-block font-montserrat-700 text-xs uppercase tracking-widest text-black">
+                {modulesEyebrow ?? 'Modules'}
+              </span>
+              <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl tracking-tight text-indigo-800">
+                {modulesTitle ?? `${program.title} Modules`}
+              </h2>
+              {modulesSubtitle && (
+                <p className="mt-4 font-montserrat-400 text-base lg:text-lg text-slate-600 leading-relaxed">
+                  {modulesSubtitle}
+                </p>
+              )}
+            </div>
+
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {modules.map((m, i) => (
+                <CubeModuleCard key={m.title} index={i} {...m} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* BENEFITS */}
       <section className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">

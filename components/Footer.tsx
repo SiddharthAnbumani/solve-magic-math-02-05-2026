@@ -14,6 +14,9 @@ const PROGRAMS = [
   { label: "Rubik's Cube", href: '/programs/rubiks' },
   { label: 'Vedic Maths', href: '/programs/vedic' },
   { label: 'Tuition', href: '/programs/tuition' },
+  { label: 'Phonics', href: '/programs/phonics' },
+  { label: 'Tamil Reading', href: '/programs/tamil-reading' },
+  { label: 'Handwriting', href: '/programs/handwriting' },
 ]
 
 export default function Footer() {
@@ -89,10 +92,10 @@ export default function Footer() {
                 Contact
               </h4>
               <ul className="mt-5 space-y-4 text-[15px] text-center">
-                <li className="flex items-start gap-3 text-white/90 font-montserrat-600 ">
+                <li className="flex items-center gap-3 text-white/90 font-montserrat-600 ">
                   <Phone size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <a href="tel:+917550223044" className="hover:text-white text-white/90 transition">
-                    +91 75502 23044
+                    +91 7200757754
                   </a>
                 </li>
 
@@ -102,16 +105,14 @@ export default function Footer() {
                     href="mailto:hello@magicmaths.in"
                     className="hover:text-white transition text-white/90  font-montserrat-600"
                   >
-                    hello@magicmaths.in
+                    magicmathslearning@gmail.com 
                   </a>
                 </li>
 
                 <li className="flex items-start gap-3 text-white/90 font-montserrat-600">
                   <MapPin size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <span>
-                    Anna Nagar Center,
-                    <br />
-                    Chennai — 600040
+                   Chandra Villa, Rajakilpakkam Chennai -600073
                   </span>
                 </li>
               </ul>

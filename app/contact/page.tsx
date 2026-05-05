@@ -1,8 +1,18 @@
 'use client'
 
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { useState } from 'react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import BranchCard from '@/components/BranchCard'
 
 export default function ContactPage() {
+  const [selectedProgram, setSelectedProgram] = useState('abacus')
   return (
     <div className="bg-white text-slate-900 min-h-screen pt-28">
 
@@ -72,12 +82,18 @@ export default function ContactPage() {
                 <label className="text-sm font-montserrat-500 text-slate-600">
                   Program
                 </label>
-                <select className="mt-2 w-full border-b border-slate-300 px-1 py-3 focus:outline-none focus:border-indigo-600 bg-transparent">
-                  <option>Abacus</option>
-                  <option>Rubik's Cube</option>
-                  <option>Vedic Maths</option>
-                  <option>Tuition</option>
-                </select>
+                <input type="hidden" name="program" value={selectedProgram} />
+                <Select value={selectedProgram} onValueChange={setSelectedProgram}>
+                  <SelectTrigger className="mt-2 h-auto rounded-none border-0 border-b border-slate-300 px-1 py-3 text-base shadow-none focus:ring-0 focus:border-indigo-600">
+                    <SelectValue placeholder="Select a program" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="abacus">Abacus</SelectItem>
+                    <SelectItem value="rubiks-cube">Rubik&apos;s Cube</SelectItem>
+                    <SelectItem value="vedic-maths">Vedic Maths</SelectItem>
+                    <SelectItem value="tuition">Tuition</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               {/* Message */}
@@ -102,11 +118,41 @@ export default function ContactPage() {
               </button>
               </div>
             </form>
+              {/* CTA BLOCK */}
+  <div className="bg-indigo-700 text-white p-8 rounded-2xl relative overflow-hidden mt-10">
+
+    {/* subtle background glow */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]" />
+
+    <div className="relative">
+      <h3 className="font-monument-700 text-xl">
+        Book a Free Demo Class
+      </h3>
+
+      <p className="text-white/80 text-sm mt-3 leading-relaxed">
+        Let your child experience learning the fun way — no pressure, just clarity.
+      </p>
+
+      <a
+        href="tel:+917550223044"
+        className="inline-block mt-6 bg-white text-indigo-700 px-6 py-2.5 rounded-full font-monument-400 hover:bg-gray-100 transition"
+      >
+        Call Now
+      </a>
+    </div>
+  </div>
           </div>
 
           {/* RIGHT SIDE INFO */}
     <div className="w-full lg:w-1/2 flex flex-col gap-10">
-
+   <BranchCard
+        name="Sembakkam Branch"
+        image="/magic_maths_sembakkam.webp"
+        address="Chandra Villa, 28/2 Ponniyamman Kovil Street, Rajakilpakkam, Chennai - 600073"
+        phone="7200757754"
+        mapLink="https://share.google/2PtXrwgGvJl5q7Abs"
+        email="magicmathslearning@gmail.com"
+      />
   {/* INFO WRAPPER */}
   <div className="space-y-8 lg:bg-gray-100 lg:p-8 lg:rounded-2xl">
 
@@ -160,29 +206,7 @@ export default function ContactPage() {
 
   </div>
 
-  {/* CTA BLOCK */}
-  <div className="bg-indigo-700 text-white p-8 rounded-2xl relative overflow-hidden">
 
-    {/* subtle background glow */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]" />
-
-    <div className="relative">
-      <h3 className="font-monument-700 text-xl">
-        Book a Free Demo Class
-      </h3>
-
-      <p className="text-white/80 text-sm mt-3 leading-relaxed">
-        Let your child experience learning the fun way — no pressure, just clarity.
-      </p>
-
-      <a
-        href="tel:+917550223044"
-        className="inline-block mt-6 bg-white text-indigo-700 px-6 py-2.5 rounded-full font-montserrat-600 hover:bg-gray-100 transition"
-      >
-        Call Now
-      </a>
-    </div>
-  </div>
 
 </div>
         </div>

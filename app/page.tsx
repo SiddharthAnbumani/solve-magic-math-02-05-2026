@@ -25,28 +25,28 @@ const PROGRAMS = [
     title: 'Abacus',
     description:
       'Faster mental arithmetic and sharper concentration through structured visual training.',
-    image: '/programs/abacus.webp',
+    image: '/abacus.jpg',
   },
   {
     icon: Box,
     title: "Rubik's Cube",
     description:
       'Spatial reasoning, pattern recognition, and that proud "I solved it" moment.',
-    image: '/programs/rubiks.webp',
+    image: '/_.webp',
   },
   {
     icon: BookOpen,
     title: 'Vedic Maths',
     description:
       'Ancient shortcuts that turn long calculations into seconds — perfect for school exams.',
-    image: '/programs/vedic.webp',
+    image: '/_.webp',
   },
   {
     icon: GraduationCap,
     title: 'Tuition',
     description:
       'Personalised academic support across CBSE, State Board and ICSE syllabi.',
-    image: '/programs/tuition.webp',
+    image: '/_.webp',
   },
 ] as const
 

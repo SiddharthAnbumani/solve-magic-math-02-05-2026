@@ -1,4 +1,13 @@
-import { BookOpen, Box, Calculator, GraduationCap, type LucideIcon } from 'lucide-react'
+import {
+  BookOpen,
+  Box,
+  Calculator,
+  GraduationCap,
+  Languages,
+  Mic2,
+  PenLine,
+  type LucideIcon,
+} from 'lucide-react'
 
 export type CurriculumStep = {
   title: string
@@ -42,7 +51,7 @@ export const ABACUS: Program = {
   ],
   ageRange: 'Ages 6–14',
   duration: '8 levels · ~6 months each',
-  image: '/programs/abacus.webp',
+  image: '/abacus.jpg',
 }
 
 export const RUBIKS: Program = {
@@ -68,7 +77,7 @@ export const RUBIKS: Program = {
   ],
   ageRange: 'Ages 7–16',
   duration: '4 modules · ~3 months each',
-  image: '/programs/rubiks.webp',
+  image: '/rubiks.jpg',
 }
 
 export const VEDIC: Program = {
@@ -94,7 +103,7 @@ export const VEDIC: Program = {
   ],
   ageRange: 'Ages 8–16',
   duration: '4 modules · ~2 months each',
-  image: '/programs/vedic.webp',
+  image: '/vedic_maths.jpg',
 }
 
 export const TUITION: Program = {
@@ -120,7 +129,93 @@ export const TUITION: Program = {
   ],
   ageRange: 'Classes 3–10',
   duration: 'Year-round · 3 sessions per week',
-  image: '/programs/tuition.webp',
+  image: '/tuition.jpg',
 }
 
-export const PROGRAMS: Program[] = [ABACUS, RUBIKS, VEDIC, TUITION]
+export const PHONICS: Program = {
+  slug: 'phonics',
+  icon: Mic2,
+  title: 'Phonics',
+  tagline: 'From sounds to confident reading.',
+  description:
+    'Decode English with confidence using systematic letter-sound training.',
+  overview:
+    'Phonics is the bridge between letters and reading. Through structured letter-sound mapping, blending and decoding drills, kids learn to read independently — without rote memorisation, and with a deep love for words.',
+  benefits: [
+    'Read unfamiliar words independently',
+    'Stronger pronunciation and clarity',
+    'Faster vocabulary growth',
+    'Confidence in classroom reading',
+  ],
+  curriculum: [
+    { title: 'Letter Sounds', description: 'Single-letter sounds, short vowels, basic consonants.' },
+    { title: 'Blending', description: 'CVC words, simple sentences, sight-word integration.' },
+    { title: 'Digraphs & Blends', description: 'sh, ch, th, two-letter blends, magic-e words.' },
+    { title: 'Reading Fluency', description: 'Story reading, comprehension and expressive reading.' },
+  ],
+  ageRange: 'Ages 4–8',
+  duration: '4 levels · ~2 months each',
+  image: '/_.webp',
+}
+
+export const TAMIL_READING: Program = {
+  slug: 'tamil-reading',
+  icon: Languages,
+  title: 'Tamil Reading',
+  tagline: 'Read, write and love Tamil.',
+  description:
+    'Confident Tamil reading through letter recognition, words and short stories.',
+  overview:
+    'Tamil Reading builds a strong foundation in the language — from uyir and mei letters to compound letters, words, sentences and short stories. Designed for kids who need extra support or are starting from scratch.',
+  benefits: [
+    'Recognise all Tamil letters fluently',
+    'Read words, sentences and short stories',
+    'Improved spelling and writing',
+    'Cultural confidence and pride in Tamil',
+  ],
+  curriculum: [
+    { title: 'Uyir Eluthukkal', description: '12 vowel letters, recognition and pronunciation.' },
+    { title: 'Mei Eluthukkal', description: '18 consonant letters, sound mapping.' },
+    { title: 'Uyirmei & Words', description: 'Compound letters, simple words, daily vocabulary.' },
+    { title: 'Sentences & Stories', description: 'Short passages, comprehension and fluency.' },
+  ],
+  ageRange: 'Ages 5–12',
+  duration: '4 levels · ~2 months each',
+  image: '/_.webp',
+}
+
+export const HANDWRITING: Program = {
+  slug: 'handwriting',
+  icon: PenLine,
+  title: 'Handwriting',
+  tagline: 'Neat, fast, confident writing.',
+  description:
+    'Legible, beautiful handwriting through structured letter-formation training.',
+  overview:
+    'Handwriting is more than neat letters — it builds fine motor control, focus and a calm hand. Our method covers print, cursive and speed-writing so kids walk into school with handwriting they are proud of.',
+  benefits: [
+    'Legible, well-formed letters',
+    'Faster note-taking in school',
+    'Better focus and patience',
+    'Confidence in exams and projects',
+  ],
+  curriculum: [
+    { title: 'Grip & Posture', description: 'Correct hold, posture, line awareness.' },
+    { title: 'Print Letters', description: 'Capital and small letters, formation drills.' },
+    { title: 'Cursive Writing', description: 'Joining letters, slant, rhythm.' },
+    { title: 'Speed & Style', description: 'Daily speed practice, neatness, exam-ready writing.' },
+  ],
+  ageRange: 'Ages 5–12',
+  duration: '4 levels · ~2 months each',
+  image: '/_.webp',
+}
+
+export const PROGRAMS: Program[] = [
+  ABACUS,
+  RUBIKS,
+  VEDIC,
+  TUITION,
+  PHONICS,
+  TAMIL_READING,
+  HANDWRITING,
+]

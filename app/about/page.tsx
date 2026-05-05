@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Brain, Target, Users, Award, MapPin, Star } from 'lucide-react'
 import FounderSection from '@/components/founderSection'
+import BranchCard from '@/components/BranchCard'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -40,27 +41,32 @@ export default function AboutPage() {
       <section className="px-6 sm:px-10 lg:px-20 py-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            className="lg:w-1/2"
-          >
-            <h2 className="font-monument-700 text-2xl text-indigo-700">
-              Our Story
-            </h2>
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  className="lg:w-1/2"
+>
+  <h2 className="font-monument-700 text-2xl text-indigo-700">
+    Our Story
+  </h2>
 
-            <p className="mt-5 text-slate-600 leading-relaxed">
-              Magic Maths was built with a simple idea — learning should be
-              engaging, fast and confidence-building.
-            </p>
+  <p className="mt-5 text-slate-600 leading-relaxed">
+    At Magic Maths Learning and Education Institute, we believe the hours after school are where real growth begins.
+  </p>
 
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              Instead of traditional methods, we focus on interaction,
-              visualisation and structured progression — helping children
-              develop real mental strength.
-            </p>
-          </motion.div>
+  <p className="mt-4 text-slate-600 leading-relaxed">
+    We are not a traditional tuition centre — we are a cognitive learning space where children build focus, confidence, and problem-solving skills through proven methods like Abacus and mind-training activities.
+  </p>
+
+  <p className="mt-4 text-slate-600 leading-relaxed">
+    Our approach blends structure with creativity, helping both sides of the brain work together — so children don’t just learn faster, they think smarter.
+  </p>
+
+  <p className="mt-4 text-slate-600 leading-relaxed">
+    In our classrooms, “I can’t” becomes “I’ll try”… and “I’ll try” becomes “I’ve mastered it.”
+  </p>
+</motion.div>
 
           <motion.div
             variants={fadeUp}
@@ -69,7 +75,7 @@ export default function AboutPage() {
             className="relative lg:w-1/2 h-[320px] sm:h-[420px] rounded-3xl overflow-hidden"
           >
             <Image
-              src="/about.jpg"
+              src="/magic_maths_sembakkam.webp"
               alt="Students learning"
               fill
               className="object-cover"
@@ -117,7 +123,7 @@ export default function AboutPage() {
       ].map((t, i) => (
         <div
           key={i}
-          className="h-full flex flex-col justify-between p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition"
+          className="h-full flex flex-col justify-between p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition"
         >
           <p className="text-sm leading-relaxed text-white/90">
             “{t.text}”
@@ -146,6 +152,7 @@ export default function AboutPage() {
   </div>
 </section>
 
+
       {/* BRANCHES */}
 <section className="py-28 bg-white">
   <div className="px-6 sm:px-10 lg:px-20 max-w-8xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
@@ -153,22 +160,22 @@ export default function AboutPage() {
     {/* LEFT SIDE (STATEMENT) */}
     <div>
       <h2 className="font-monument-700 text-4xl sm:text-5xl text-indigo-700 leading-tight">
-        Across Chennai.
+        in Chennai.
         <br />
         <span className="text-slate-900">Closer than you think.</span>
       </h2>
 
       <p className="mt-6 text-slate-600 max-w-md leading-relaxed font-montserrat-400">
-        Wherever you are, there’s a Magic Maths center nearby — with the same
+        there’s a Magic Maths center nearby — with the same
         teaching quality, same focus, and the same results parents trust.
       </p>
 
-      <a
+      {/* <a
         href="/contact"
         className="inline-block mt-8 font-monument text-sm text-indigo-700 hover:underline"
       >
         Find your nearest branch →
-      </a>
+      </a> */}
     </div>
 
     {/* RIGHT SIDE (BRANCH LIST) */}
@@ -176,21 +183,21 @@ export default function AboutPage() {
 
       {[
         {
-          name: "Anna Nagar",
-          sub: "Flagship center · 120+ students",
+          name: "Sembakkam",
+          sub: "Flagship center · 30+ students",
         },
         {
-          name: "Velachery",
+          name: "Rajakikpakkam",
           sub: "Top rated by parents",
         },
-        {
-          name: "OMR",
-          sub: "Fast growing center",
-        },
-        {
-          name: "Tambaram",
-          sub: "New batches open",
-        },
+        // {
+        //   name: "OMR",
+        //   sub: "Fast growing center",
+        // },
+        // {
+        //   name: "Tambaram",
+        //   sub: "New batches open",
+        // },
       ].map((b, i) => (
         <div
           key={b.name}

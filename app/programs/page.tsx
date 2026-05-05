@@ -85,7 +85,7 @@ export default function ProgramsPage() {
             {p.duration}
           </span>
 
-          <span className="inline-flex items-center gap-1 font-monument text-sm text-indigo-700 group-hover:gap-2 transition-all">
+          <span className="inline-flex items-center gap-1 font-monument text-sm bg-red-800 px-5 py-2 text-white rounded-2xl group-hover:gap-2 transition-all">
             View program <ArrowUpRight size={16} />
           </span>
         </div>
