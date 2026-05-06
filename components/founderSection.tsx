@@ -37,27 +37,35 @@ export default function FounderSection() {
           viewport={{ once: true }}
           className="w-full lg:w-1/2"
         >
-          <p className="text-xs font-montserrat-600 text-indigo-700 uppercase tracking-widest">
+          <p className="text-sm font-montserrat-600 text-indigo-700 uppercase tracking-widest">
             Founder
           </p>
+                <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
+                Meet the Heart Behind Magic Maths
+                </h2>
 
-          <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
-            Meet the Mind Behind Magic Maths
-          </h2>
+                <p className="mt-6 text-slate-600 font-montserrat-400 leading-relaxed">
+                Magic Maths didn’t begin as just an academy — it started with a simple passion:
+                a genuine love for teaching children and seeing them truly understand what they learn.
+                </p>
 
-          <p className="mt-6 text-slate-600 font-montserrat-400 leading-relaxed">
-            Magic Maths was founded with a clear vision — to transform the way children learn.
-            Instead of memorization, the focus is on building strong mental abilities through
-            structured and engaging techniques.
-          </p>
+                <p className="mt-4 text-slate-600 font-montserrat-400 leading-relaxed">
+                What began as helping a few students overcome their fear of maths soon turned into something much bigger.
+                Watching children grow in confidence, solve problems faster, and enjoy learning sparked a deeper purpose —
+                to create a space where every child feels capable, supported, and excited to learn.
+                </p>
 
-          <p className="mt-4 text-slate-600 font-montserrat-400 leading-relaxed">
-            With years of experience in teaching and mentoring, the founder has helped
-            students improve concentration, speed, and confidence. The goal is not just
-            academic success, but shaping young minds to think independently and perform better in life.
-          </p>
+                <p className="mt-4 text-slate-600 font-montserrat-400 leading-relaxed">
+                With years of teaching experience and a strong belief that every child learns differently,
+                Magic Maths was built to move beyond memorization. The focus is on developing mental ability,
+                sharp thinking, and self-confidence — skills that go far beyond the classroom.
+                </p>
 
-          {/* HIGHLIGHTS */}
+                <p className="mt-4 text-slate-600 font-montserrat-400 leading-relaxed">
+                Today, it’s not just about maths. It’s about shaping young minds to think independently,
+                believe in themselves, and approach challenges with confidence — in academics and in life.
+                </p>
+                        {/* HIGHLIGHTS */}
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-montserrat-500">
               5+ Years Experience

@@ -155,7 +155,7 @@ export const PHONICS: Program = {
   ],
   ageRange: 'Ages 4–8',
   duration: '4 levels · ~2 months each',
-  image: '/_.webp',
+  image: '/phonics.png',
 }
 
 export const TAMIL_READING: Program = {
@@ -181,7 +181,7 @@ export const TAMIL_READING: Program = {
   ],
   ageRange: 'Ages 5–12',
   duration: '4 levels · ~2 months each',
-  image: '/_.webp',
+  image: '/tamil.webp',
 }
 
 export const HANDWRITING: Program = {
@@ -207,7 +207,7 @@ export const HANDWRITING: Program = {
   ],
   ageRange: 'Ages 5–12',
   duration: '4 levels · ~2 months each',
-  image: '/_.webp',
+  image: '/handwriting.avif',
 }
 
 export const PROGRAMS: Program[] = [

@@ -50,7 +50,7 @@ export default function BranchCard({
       <div className="p-5 bg-indigo-700">
         <h3 className="text-xl font-monument-700 tracking-wider text-white text-center">{name}</h3>
 
-        <p className="text-sm font-monserrat-700 mt-2 leading-tight text-white/90">
+        <p className="text-sm font-monserrat-700 mt-2 leading-tight text-white/90 text-center">
           {address}
         </p>
 
@@ -68,7 +68,7 @@ export default function BranchCard({
             href={mapLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 bg-red-400 py-2 rounded-xl text-sm font-monument-400 hover:bg-gray-100 transition"
+            className="flex-1 flex items-center justify-center gap-2 bg-red-800 text-white py-2 rounded-xl text-sm font-monument-400 hover:bg-gray-100 transition"
           >
             <MapPin size={16} />
             Location

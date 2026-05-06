@@ -13,6 +13,7 @@ import BranchCard from '@/components/BranchCard'
 
 export default function ContactPage() {
   const [selectedProgram, setSelectedProgram] = useState('abacus')
+
   return (
     <div className="bg-white text-slate-900 min-h-screen pt-28">
 
@@ -28,189 +29,259 @@ export default function ContactPage() {
         </p>
       </section>
 
-      {/* MAIN */}
-      <section className="px-6 sm:px-10 lg:px-20 pb-20">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14">
+      {/* CONTACT + BRANCHES FIRST */}
+      <section className="px-4 sm:px-10 lg:px-20 py-16 bg-white">
+        <div className="max-w-7xl mx-auto space-y-12">
 
-          {/* FORM */}
-          <div className="w-full lg:w-1/2">
+          {/* BRANCHES */}
+          <div>
 
-            <h2 className="font-monument-700 text-2xl text-indigo-700">
-              Send us a message
-            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <BranchCard
+                name="Sembakkam Branch"
+                image="/magic_maths_sembakkam.webp"
+                address="Chandra Villa, 28/2 Ponniyamman Kovil Street, Rajakilpakkam, Chennai - 600073"
+                phone="7200757754"
+                mapLink="https://share.google/2PtXrwgGvJl5q7Abs"
+                email="magicmathslearning@gmail.com"
+              />
 
-            <form className="mt-8 space-y-6">
-
-              {/* Name */}
-              <div>
-                <label className="text-sm font-montserrat-500 text-slate-600">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  className="mt-2 w-full border-b border-slate-300 px-1 py-3 focus:outline-none focus:border-indigo-600 transition"
-                  placeholder="Enter your name"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="text-sm font-montserrat-500 text-slate-600">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  className="mt-2 w-full border-b border-slate-300 px-1 py-3 focus:outline-none focus:border-indigo-600 transition"
-                  placeholder="+91 98765 43210"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="text-sm font-montserrat-500 text-slate-600">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="mt-2 w-full border-b border-slate-300 px-1 py-3 focus:outline-none focus:border-indigo-600 transition"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              {/* Program */}
-              <div>
-                <label className="text-sm font-montserrat-500 text-slate-600">
-                  Program
-                </label>
-                <input type="hidden" name="program" value={selectedProgram} />
-                <Select value={selectedProgram} onValueChange={setSelectedProgram}>
-                  <SelectTrigger className="mt-2 h-auto rounded-none border-0 border-b border-slate-300 px-1 py-3 text-base shadow-none focus:ring-0 focus:border-indigo-600">
-                    <SelectValue placeholder="Select a program" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="abacus">Abacus</SelectItem>
-                    <SelectItem value="rubiks-cube">Rubik&apos;s Cube</SelectItem>
-                    <SelectItem value="vedic-maths">Vedic Maths</SelectItem>
-                    <SelectItem value="tuition">Tuition</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="text-sm font-montserrat-500 text-slate-600">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  className="mt-2 w-full border-b border-slate-300 px-1 py-3 focus:outline-none focus:border-indigo-600 transition"
-                  placeholder="Tell us more..."
-                />
-              </div>
-
-              {/* BUTTON */}
-              <div className="flex justify-center">
-              <button
-                type="submit"
-                className="mt-6 w-full sm:w-auto px-8 py-3 rounded-full bg-indigo-700 text-red-400 font-monument text-sm hover:bg-red-700 transition"
-              >
-                Send Message
-              </button>
-              </div>
-            </form>
-              {/* CTA BLOCK */}
-  <div className="bg-indigo-700 text-white p-8 rounded-2xl relative overflow-hidden mt-10">
-
-    {/* subtle background glow */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]" />
-
-    <div className="relative">
-      <h3 className="font-monument-700 text-xl">
-        Book a Free Demo Class
-      </h3>
-
-      <p className="text-white/80 text-sm mt-3 leading-relaxed">
-        Let your child experience learning the fun way — no pressure, just clarity.
-      </p>
-
-      <a
-        href="tel:+917550223044"
-        className="inline-block mt-6 bg-white text-indigo-700 px-6 py-2.5 rounded-full font-monument-400 hover:bg-gray-100 transition"
-      >
-        Call Now
-      </a>
-    </div>
-  </div>
+              <BranchCard
+                name="Rajakilpakkam Branch"
+                image="/magic_maths_sembakkam.webp"
+                address="Anna Nagar, Chennai - 600040"
+                phone="7550223044"
+                mapLink="#"
+                email="hello@magicmaths.in"
+              />
+            </div>
           </div>
 
-          {/* RIGHT SIDE INFO */}
-    <div className="w-full lg:w-1/2 flex flex-col gap-10">
-   <BranchCard
-        name="Sembakkam Branch"
-        image="/magic_maths_sembakkam.webp"
-        address="Chandra Villa, 28/2 Ponniyamman Kovil Street, Rajakilpakkam, Chennai - 600073"
-        phone="7200757754"
-        mapLink="https://share.google/2PtXrwgGvJl5q7Abs"
-        email="magicmathslearning@gmail.com"
-      />
-  {/* INFO WRAPPER */}
-  <div className="space-y-8 lg:bg-gray-100 lg:p-8 lg:rounded-2xl">
+          {/* CONTACT INFO */}
+          <div className="space-y-8 bg-gray-100 p-8 rounded-2xl">
 
-    {/* ITEM */}
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-        <Phone className="text-red-400 w-5 h-5" />
-      </div>
-      <div>
-        <p className="font-montserrat-600 text-slate-900">Call Us</p>
-        <p className="text-slate-600 text-sm mt-1">+91 75502 23044</p>
-      </div>
-    </div>
+            <div className="grid sm:grid-cols-2 gap-8">
 
-    {/* ITEM */}
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-        <Mail className="text-red-400 w-5 h-5" />
-      </div>
-      <div>
-        <p className="font-montserrat-600 text-slate-900">Email</p>
-        <p className="text-slate-600 text-sm mt-1">hello@magicmaths.in</p>
-      </div>
-    </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
+                  <Phone className="text-red-400 w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-montserrat-600 text-slate-900">Call Us</p>
+                  <p className="text-slate-600 text-sm mt-1">+91 75502 23044</p>
+                </div>
+              </div>
 
-    {/* ITEM */}
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-        <MapPin className="text-red-400 w-5 h-5" />
-      </div>
-      <div>
-        <p className="font-montserrat-600 text-slate-900">Location</p>
-        <p className="text-slate-600 text-sm mt-1">
-          Anna Nagar, Chennai — 600040
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
+                  <Mail className="text-red-400 w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-montserrat-600 text-slate-900">Email</p>
+                  <p className="text-slate-600 text-sm mt-1">hello@magicmaths.in</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
+                  <MapPin className="text-red-400 w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-montserrat-600 text-slate-900">Location</p>
+                  <p className="text-slate-600 text-sm mt-1">
+                    Anna Nagar, Chennai — 600040
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
+                  <Clock className="text-red-400 w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-montserrat-600 text-slate-900">Timings</p>
+                  <p className="text-slate-600 text-sm mt-1">
+                    Mon–Sat: 4 PM – 8 PM
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* FORM (MOVED DOWN) */}
+<section className="px-6 sm:px-10 lg:px-20 py-20">
+  <div className="max-w-7xl mx-auto">
+
+    {/* WRAPPER */}
+    <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+
+      {/* FORM */}
+      <div className="bg-white border border-slate-200 shadow-xl rounded-2xl p-8">
+
+        <h2 className="font-monument-700 text-2xl text-indigo-700">
+          Book a Free Demo
+        </h2>
+
+        <p className="text-sm text-slate-500 mt-2">
+          Takes less than 30 seconds
         </p>
-      </div>
-    </div>
 
-    {/* ITEM */}
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-lg not-only-of-type:bg-indigo-700">
-        <Clock className="text-red-400 w-5 h-5" />
+        <form className="mt-6 space-y-5">
+
+          {/* ROW 1 */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-slate-500">Parent Name</label>
+              <input
+                type="text"
+                className="mt-1 w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-600 transition"
+                placeholder="Enter name"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs text-slate-500">Phone</label>
+              <input
+                type="tel"
+                className="mt-1 w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-600 transition"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+          </div>
+
+          {/* ROW 2 */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-slate-500">Email</label>
+              <input
+                type="email"
+                className="mt-1 w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-600 transition"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs text-slate-500">Program</label>
+              <Select value={selectedProgram} onValueChange={setSelectedProgram}>
+                <SelectTrigger className="mt-1 w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-200">
+                  <SelectValue placeholder="Select program" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="abacus">Abacus</SelectItem>
+                  <SelectItem value="rubiks-cube">Rubik&apos;s Cube</SelectItem>
+                  <SelectItem value="vedic-maths">Vedic Maths</SelectItem>
+                  <SelectItem value="tuition">Tuition</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* MESSAGE */}
+          <div>
+            <label className="text-xs text-slate-500">Message (Optional)</label>
+            <textarea
+              rows={3}
+              className="mt-1 w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-600 transition"
+              placeholder="Any specific requirement..."
+            />
+          </div>
+
+          {/* CTA */}
+          <button
+            type="submit"
+            className="w-full bg-indigo-700 text-white py-3 rounded-lg font-medium hover:bg-indigo-800 transition"
+          >
+            Book Free Demo
+          </button>
+
+          {/* TRUST TEXT */}
+          <p className="text-xs text-center text-slate-400">
+            ⚡ We usually respond within 10 minutes
+          </p>
+
+        </form>
       </div>
-      <div>
-        <p className="font-montserrat-600 text-slate-900">Timings</p>
-        <p className="text-slate-600 text-sm mt-1">
-          Mon–Sat: 4 PM – 8 PM
-        </p>
+
+      {/* DEMO CTA SIDE */}
+<div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-700 via-indigo-800 to-indigo-900 text-white p-8 shadow-2xl flex flex-col justify-between">
+
+  {/* Glow Effects */}
+  <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+  <div className="absolute bottom-0 left-0 w-60 h-60 bg-purple-500/20 rounded-full blur-2xl" />
+
+  <div className="relative z-10">
+
+    {/* TAG */}
+    <span className="inline-block text-xs bg-white/10 px-3 py-1 rounded-full tracking-wide">
+      FREE DEMO AVAILABLE
+    </span>
+
+    {/* HEADLINE */}
+    <h3 className="font-monument-700 text-2xl mt-4 leading-snug">
+      See How Your Child Can Improve in Just 1 Session
+    </h3>
+
+    {/* SUBTEXT */}
+    <p className="mt-4 text-white/80 text-sm leading-relaxed">
+      Speak with our expert trainers and experience our teaching method —
+      no commitment, just clarity.
+    </p>
+
+    {/* BENEFITS */}
+    <div className="mt-6 space-y-3 text-sm">
+
+      <div className="flex items-center gap-3">
+        <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</div>
+        <span>Free 1-on-1 demo session</span>
       </div>
+
+      <div className="flex items-center gap-3">
+        <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</div>
+        <span>Personalized learning plan</span>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">✓</div>
+        <span>Improve speed & confidence</span>
+      </div>
+
+    </div>
+  </div>
+
+  {/* CTA AREA */}
+  <div className="relative z-10 mt-8 space-y-3">
+
+    <a
+      href="tel:+917550223044"
+      className="block w-full text-center bg-white text-indigo-700 py-3 rounded-xl font-semibold shadow-md hover:scale-[1.02] hover:bg-gray-100 transition"
+    >
+      📞 Call & Book Now
+    </a>
+
+    <a
+      href="https://wa.me/917550223044"
+      target="_blank"
+      className="block w-full text-center border border-white/30 py-3 rounded-xl font-medium hover:bg-white/10 transition"
+    >
+      💬 Chat on WhatsApp
+    </a>
+
+    {/* TRUST LINE */}
+    <p className="text-xs text-white/60 text-center mt-2">
+      ⚡ Usually responds within 10 minutes
+    </p>
+
+  </div>
+</div>
+
     </div>
 
   </div>
-
-
-
-</div>
-        </div>
-      </section>
+</section>
 
       {/* MAP */}
       <section className="px-6 sm:px-10 lg:px-20 pb-20">

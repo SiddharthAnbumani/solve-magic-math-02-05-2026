@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -15,10 +17,11 @@ import {
   Users,
   Zap,
 } from 'lucide-react'
-
+import { motion } from "framer-motion"
 import ProgramCard from '@/components/ProgramCard'
 import SectionHeading from '@/components/SectionHeading'
-
+import ProgramShowcase from '../components/ProgramShowcase'
+import ProgramsSection from '@/components/ProgramsSection'
 const PROGRAMS = [
   {
     icon: Calculator,
@@ -32,21 +35,21 @@ const PROGRAMS = [
     title: "Rubik's Cube",
     description:
       'Spatial reasoning, pattern recognition, and that proud "I solved it" moment.',
-    image: '/_.webp',
+    image: 'rubiks.jpg',
   },
   {
     icon: BookOpen,
     title: 'Vedic Maths',
     description:
       'Ancient shortcuts that turn long calculations into seconds — perfect for school exams.',
-    image: '/_.webp',
+    image: 'vedic_maths.jpg',
   },
   {
     icon: GraduationCap,
     title: 'Tuition',
     description:
       'Personalised academic support across CBSE, State Board and ICSE syllabi.',
-    image: '/_.webp',
+    image: '/tuition.jpg',
   },
 ] as const
 
@@ -119,7 +122,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden mt-20">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(67,56,202,0.12),transparent_60%)]" />
-        <div className="mx-auto max-w- px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-28">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-7 order-2 lg:order-1">
               {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800 text-md borde text-white  border-white font-montserrat-500 ">
@@ -209,22 +212,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROGRAMS */}
-      <section className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">
-        <div className="mx-auto px-2 sm:px-10 lg:px-10">
-          <SectionHeading
-            align="center"
-            eyebrow="Our Programs"
-            title="Four ways to grow a sharper mind."
-            subtitle="Pick one — or layer them. Each program is built to be fun first, rigorous second."
-          />
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {PROGRAMS.map((p) => (
-              <ProgramCard key={p.title} {...p} />
-            ))}
-          </div>
-        </div>
-      </section>
+<AboutSection/>
+<ProgramsSection programs={PROGRAMS} />
 
       {/* WHY CHOOSE US */}
       <section className="py-20 lg:py-28">
@@ -308,8 +297,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
-            eyebrow="From parents"
-            title="Honest words from real families."
+            eyebrow="What parents say"
+            title="Testimonials"
           />
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
@@ -319,7 +308,7 @@ export default function Home() {
               >
                 <div className="flex gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-indigo-700 text-indigo-700" />
+                    <Star key={i} size={14} className="fill-yellow-400 text-yellow-500" />
                   ))}
                 </div>
                 <blockquote className="mt-4 font-montserrat-400 text-base text-slate-700 leading-relaxed">
@@ -336,38 +325,161 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-indigo-700 px-8 py-16 lg:p-20">
-            <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-indigo-700/60" />
-            <div className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-indigo-7000/40" />
-            <div className="relative max-w-2xl">
-              <h2 className="font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-950">
-                Enrol your child today.
-              </h2>
-              <p className="mt-4 font-montserrat-400 text-base lg:text-lg text-slate-900/80 max-w-xl">
-                Spaces are limited each batch — book a free demo and see if it&apos;s the right fit before you commit.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white font-montserrat-600 text-sm hover:bg-slate-800 transition"
-                >
-                  WhatsApp Us <ArrowRight size={16} />
-                </a>
-                <a
-                  href={`tel:${PHONE}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-slate-950 font-montserrat-600 text-sm hover:bg-slate-100 transition"
-                >
-                  <Phone size={16} /> Call +91 75502 23044
-                </a>
-              </div>
-            </div>
+<section className="py-20 lg:py-24">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div className="relative overflow-hidden rounded-3xl h-[420px] lg:h-[480px]">
+
+      {/* 🔥 Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/abacus.jpg')", // 👈 change image here
+        }}
+      />
+
+      {/* 🔥 Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40" />
+
+      {/* 🔥 Soft Glow */}
+      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-red-500/20 blur-3xl" />
+      <div className="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-red-400/20 blur-3xl" />
+
+      {/* 🔥 Content */}
+      <div className="relative h-full flex items-center px-8 lg:px-16">
+        <div className="max-w-2xl">
+
+          <h2 className="font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-wide text-white drop-shadow-[0_6px_30px_rgba(0,0,0,0.8)]">
+            Enrol your child today.
+          </h2>
+
+          <p className="mt-4 font-montserrat-600 text-base lg:text-lg text-white max-w-5xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+            Spaces are limited each batch — book a free demo and see if it&apos;s the right fit before you commit.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+
+            {/* WhatsApp */}
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-green-600 text-white font-montserrat-700 text-sm hover:bg-indigo-700 transition"
+            >
+              WhatsApp Us 
+            </a>
+
+            {/* Call */}
+            <a
+              href={`tel:${PHONE}`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-slate-900 font-montserrat-600 text-sm hover:bg-slate-100 transition"
+            >
+              <Phone size={16} />+91 75502 23044
+            </a>
+
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
     </main>
+  )
+}
+
+
+
+ function AboutSection() {
+  return (
+    <section className="relative py-28 bg-indigo-700 text-white overflow-hidden">
+
+      {/* 🔥 Soft Background Glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[600px] h-[300px] bg-indigo-500/20 blur-3xl rounded-full" />
+      </div>
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
+
+        {/* 🔥 Heading Centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <p className="text-white font-montserrat-700 text-xs uppercase tracking-[0.2em]">
+            Who We Are
+          </p>
+
+          <h2 className="mt-4 text-white font-monument-700 text-3xl sm:text-4xl lg:text-5xl leading-tight drop-shadow-[0_6px_30px_rgba(0,0,0,0.5)]">
+            About Magic Maths
+          </h2>
+
+          <p className="mt-6 text-white text-base sm:text-lg leading-relaxed">
+            We believe math should feel natural, exciting, and empowering — not stressful.
+            At Magic Maths, we help children unlock their true potential through smart,
+            engaging learning techniques.
+          </p>
+        </motion.div>
+
+        {/* 🔥 Content */}
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
+
+          {/* LEFT — STORY */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-white text-lg leading-relaxed">
+              Magic Maths is more than just a program — it’s a transformation journey. 
+              Through proven techniques like Abacus and Vedic Maths, children learn to 
+              calculate faster, think sharper, and build strong cognitive skills.
+            </p>
+
+            <p className="mt-6 text-indigo-100 text-lg leading-relaxed">
+              Beyond numbers, we focus on developing concentration, confidence, and a 
+              love for learning — skills that stay with them for life.
+            </p>
+          </motion.div>
+
+          {/* RIGHT — HIGHLIGHTS */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+
+            {[
+              "Boost mental calculation speed",
+              "Improve memory and concentration",
+              "Build confidence in problem solving",
+              "Make learning fun and engaging",
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15 }}
+                className="flex items-start gap-4"
+              >
+                <div className="w-2 h-2 mt-2 bg-indigo-300 rounded-full" />
+                <p className="text-white text-base sm:text-lg">
+                  {item}
+                </p>
+              </motion.div>
+            ))}
+
+          </motion.div>
+
+        </div>
+
+      </div>
+    </section>
   )
 }
