@@ -215,82 +215,104 @@ export default function Home() {
 <AboutSection/>
 <ProgramsSection programs={PROGRAMS} />
 
-      {/* WHY CHOOSE US */}
-      <section className="py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Why parents choose us"
-            title="Trusted by families in the neighbourhood."
-            subtitle="The basics, done with care. No flashy gimmicks — just real teaching, real results."
-          />
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
-            {WHY.map(({ icon: Icon, title, text }) => (
-              <div key={title}>
-                <div className="w-11 h-11 rounded-lg bg-slate-900 text-indigo-700 inline-flex items-center justify-center">
-                  <Icon size={20} strokeWidth={1.75} />
-                </div>
-                <h3 className="mt-5 font-monument-700 text-lg text-slate-900">{title}</h3>
-                <p className="mt-2 font-montserrat-400 text-sm leading-relaxed text-slate-600">
-                  {text}
-                </p>
-              </div>
-            ))}
+    <section className="py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+
+          {/* 🔥 LEFT: WHY (Trust Narrative) */}
+          <div className="space-y-10">
+
+            <div>
+              <p className="font-montserrat-700 text-xs uppercase tracking-widest text-indigo-600">
+                Why parents choose us
+              </p>
+
+              <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
+                Trusted by families in the neighbourhood.
+              </h2>
+
+              <p className="mt-4 text-slate-600 text-base leading-relaxed max-w-md">
+                The basics, done with care. No flashy gimmicks — just real teaching, real results.
+              </p>
+            </div>
+
+            {/* WHY LIST (no cards, just clean rows) */}
+            <div className="space-y-6">
+              {WHY.map(({ icon: Icon, title, text }) => (
+                <motion.div
+                  key={title}
+                  whileHover={{ x: 6 }}
+                  className="flex gap-4 items-start"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                    <Icon size={18} strokeWidth={1.8} />
+                  </div>
+
+                  <div>
+                    <h3 className="font-monument-700 text-lg text-slate-900">
+                      {title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                      {text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
+
+          {/* 🔥 RIGHT: RESULTS (Impact Narrative) */}
+          <div className="space-y-10 lg:pt-10">
+
+            <div>
+              <p className="font-montserrat-700 text-xs uppercase tracking-widest text-red-500">
+                What kids walk away with
+              </p>
+
+              <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
+                Results you’ll actually notice at home.
+              </h2>
+            </div>
+
+            {/* RESULTS LIST (visual storytelling, not cards) */}
+            <div className="space-y-8">
+
+              {RESULTS.map(({ icon: Icon, title, text }, i) => (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex gap-4 items-start"
+                >
+
+                  {/* number marker */}
+                  <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-montserrat-700 text-sm">
+                    {i + 1}
+                  </div>
+
+                  <div>
+                    <h3 className="font-monument-700 text-lg text-slate-900">
+                      {title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                      {text}
+                    </p>
+                  </div>
+
+                </motion.div>
+              ))}
+
+            </div>
+
+          </div>
+
         </div>
-      </section>
-
-      {/* RESULTS */}
-      <section className="py-20 lg:py-28 bg-indigo-700 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-block font-montserrat-700 text-lg uppercase tracking-widest text-red-500">
-              What kids walk away with
-            </span>
-            <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-wide">
-              Results you&apos;ll actually notice at home.
-            </h2>
-          </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-{RESULTS.map(({ icon: Icon, title, text }) => (
-  <div key={title} className="group relative">
-    
-    {/* Layer 1 */}
-    <div className="absolute inset-0 rounded-2xl bg-indigo-700/10 translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300" />
-
-    {/* Image Layer */}
-    <div className="absolute inset-0 rounded-2xl overflow-hidden translate-x-1.5 translate-y-1.5 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300">
-      <img
-        src='_.webp'
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-xs group-hover:bg-black/30 transition" />
-    </div>
-
-    {/* Content Layer */}
-    <div className="relative h-[280px] p-6 flex flex-col justify-end rounded-2xl text-white">
-      
-      {/* Icon */}
-      <div className="mb-3 w-10 h-10 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center">
-        <Icon size={20} />
       </div>
-
-      {/* Title */}
-      <h3 className="font-monument-700 text-xl">
-        {title}
-      </h3>
-
-      {/* Text */}
-      <p className="mt-2 text-sm font-montserrat-500 text-white/80">
-        {text}
-      </p>
-    </div>
-  </div>
-))}
-          </div>
-        </div>
-      </section>
+    </section>
 
       {/* TESTIMONIALS */}
       <section className="py-20 lg:py-28">
