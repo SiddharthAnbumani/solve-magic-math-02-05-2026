@@ -19,10 +19,10 @@ export default function FounderSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative w-full lg:w-1/2 h-[320px] sm:h-[420px] rounded-3xl overflow-hidden"
+          className="relative w-full lg:w-1/2 h-[420px] sm:h-200 rounded-3xl overflow-hidden"
         >
           <Image
-            src="/icon_founder.png"
+            src="/magic_maths.jpeg"
             alt="Founder - Magic Maths"
             fill
             className="object-cover"
