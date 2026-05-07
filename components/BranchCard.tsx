@@ -58,7 +58,7 @@ export default function BranchCard({
         <div className="flex gap-3 mt-5">
           <a
             href={`tel:${phone}`}
-            className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 text-white py-2 rounded-xl font-monument-400 font-medium hover:bg-indigo-700 transition"
+            className="flex-1 flex items-center justify-center gap-2 bg-white text-indigo-700 py-2 rounded-xl font-monument-400 font-medium  transition"
           >
             <Phone size={16} />
             Call
@@ -68,7 +68,7 @@ export default function BranchCard({
             href={mapLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 bg-red-800 text-white py-2 rounded-xl text-sm font-monument-400 hover:bg-gray-100 transition"
+            className="flex-1 flex items-center justify-center gap-2 bg-red-800 text-white py-2 rounded-xl text-sm font-monument-400 transition"
           >
             <MapPin size={16} />
             Location

@@ -46,7 +46,7 @@ function VideoPlusText({
       className="
         relative 
         w-full 
-        h-[70vh] sm:h-[75vh] md:h-[550px] lg:h-[750px]
+        h-[85vh] sm:h-[75vh] md:h-[550px] lg:h-[850px]
         overflow-hidden
       "
     >

@@ -25,7 +25,8 @@ export type Program = {
   curriculum: CurriculumStep[]
   ageRange: string
   duration: string
-  image: string
+  image: string,
+  cta_image:string
 }
 
 export const ABACUS: Program = {
@@ -52,6 +53,7 @@ export const ABACUS: Program = {
   ageRange: 'Ages 6–14',
   duration: '8 levels · ~6 months each',
   image: '/abacus.jpg',
+  cta_image:'/_.webp',
 }
 
 export const RUBIKS: Program = {
@@ -78,6 +80,8 @@ export const RUBIKS: Program = {
   ageRange: 'Ages 7–16',
   duration: '4 modules · ~3 months each',
   image: '/rubiks.jpg',
+  cta_image:'/_.webp',
+
 }
 
 export const VEDIC: Program = {
@@ -104,6 +108,8 @@ export const VEDIC: Program = {
   ageRange: 'Ages 8–16',
   duration: '4 modules · ~2 months each',
   image: '/vedic_maths.jpg',
+  cta_image:'/_.webp',
+
 }
 
 export const TUITION: Program = {
@@ -130,6 +136,8 @@ export const TUITION: Program = {
   ageRange: 'Classes 3–10',
   duration: 'Year-round · 3 sessions per week',
   image: '/tuition.jpg',
+  cta_image:'/_.webp',
+
 }
 
 export const PHONICS: Program = {
@@ -156,6 +164,8 @@ export const PHONICS: Program = {
   ageRange: 'Ages 4–8',
   duration: '4 levels · ~2 months each',
   image: '/phonics.png',
+  cta_image:'/_.webp',
+
 }
 
 export const TAMIL_READING: Program = {
@@ -182,6 +192,8 @@ export const TAMIL_READING: Program = {
   ageRange: 'Ages 5–12',
   duration: '4 levels · ~2 months each',
   image: '/tamil.webp',
+  cta_image:'/_.webp',
+
 }
 
 export const HANDWRITING: Program = {
@@ -208,6 +220,8 @@ export const HANDWRITING: Program = {
   ageRange: 'Ages 5–12',
   duration: '4 levels · ~2 months each',
   image: '/handwriting.avif',
+  cta_image:'/_.webp',
+
 }
 
 export const PROGRAMS: Program[] = [

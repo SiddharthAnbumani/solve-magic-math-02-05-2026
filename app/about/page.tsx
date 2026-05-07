@@ -13,78 +13,10 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white text-slate-900 pt-28">
+    <div className="bg-white text-slate-900 pt-20">
 
-      {/* HERO */}
-      <section className="px-6 sm:px-10 lg:px-20 py-16 text-center">
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="font-monument-700 text-4xl sm:text-5xl lg:text-6xl text-indigo-700 tracking-tight"
-        >
-          About Magic Maths
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="mt-5 max-w-2xl mx-auto text-slate-600 text-lg leading-relaxed"
-        >
-          We help children unlock their full mental potential through
-          Abacus, Vedic Maths, Rubik’s Cube and personalised tuition.
-        </motion.p>
-      </section>
-
-      {/* STORY */}
-      <section className="px-6 sm:px-10 lg:px-20 py-16">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-
-<motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  className="lg:w-1/2"
->
-  <h2 className="font-monument-700 text-2xl text-indigo-700">
-    Our Story
-  </h2>
-
-  <p className="mt-5 text-slate-600 leading-relaxed">
-    At Magic Maths Learning and Education Institute, we believe the hours after school are where real growth begins.
-  </p>
-
-  <p className="mt-4 text-slate-600 leading-relaxed">
-    We are not a traditional tuition centre — we are a cognitive learning space where children build focus, confidence, and problem-solving skills through proven methods like Abacus and mind-training activities.
-  </p>
-
-  <p className="mt-4 text-slate-600 leading-relaxed">
-    Our approach blends structure with creativity, helping both sides of the brain work together — so children don’t just learn faster, they think smarter.
-  </p>
-
-  <p className="mt-4 text-slate-600 leading-relaxed">
-    In our classrooms, “I can’t” becomes “I’ll try”… and “I’ll try” becomes “I’ve mastered it.”
-  </p>
-</motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            className="relative lg:w-1/2 h-[320px] sm:h-[420px] rounded-3xl overflow-hidden"
-          >
-            <Image
-              src="/magic_maths_sembakkam.webp"
-              alt="Students learning"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-
-        </div>
-      </section>
-
+    
+<AboutSection/>
       {/* FOUNDER */}
       <FounderSection />
 {/*  */}
@@ -265,5 +197,100 @@ export default function AboutPage() {
 </section>
 
     </div>
+  )
+}
+
+
+ function AboutSection() {
+  return (
+    <section className="relative py-28 bg-indigo-900 text-white overflow-hidden">
+
+      {/* 🔥 Soft Background Glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[600px] h-[300px] bg-indigo-500/20 blur-3xl rounded-full" />
+      </div>
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
+
+        {/* 🔥 Heading Centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <p className="text-white font-montserrat-700 text-xs uppercase tracking-[0.2em]">
+            Who We Are
+          </p>
+
+          <h2 className="mt-4 text-white font-monument-700 text-3xl sm:text-4xl lg:text-5xl leading-tight drop-shadow-[0_6px_30px_rgba(0,0,0,0.5)]">
+            About Magic Maths
+          </h2>
+
+          <p className="mt-6 text-white text-base sm:text-lg leading-relaxed">
+            We believe math should feel natural, exciting, and empowering — not stressful.
+            At Magic Maths, we help children unlock their true potential through smart,
+            engaging learning techniques.
+          </p>
+        </motion.div>
+
+        {/* 🔥 Content */}
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
+
+          {/* LEFT — STORY */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-white text-lg leading-relaxed text-center">
+              Magic Maths is more than just a program, it’s a transformation journey. 
+              Through proven techniques like Abacus and Vedic Maths, children learn to 
+              calculate faster, think sharper, and build strong cognitive skills.
+            </p>
+
+            <p className="mt-6 text-indigo-100 text-lg leading-relaxed text-center">
+              Beyond numbers, we focus on developing concentration, confidence, and a 
+              love for learning — skills that stay with them for life.
+            </p>
+          </motion.div>
+
+          {/* RIGHT — HIGHLIGHTS */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+
+            {[
+              "Boost mental calculation speed",
+              "Improve memory and concentration",
+              "Build confidence in problem solving",
+              "Make learning fun and engaging",
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15 }}
+                className="flex items-start gap-4"
+              >
+                <div className="w-2 h-2 mt-2 bg-indigo-300 rounded-full" />
+                <p className="text-white text-base sm:text-lg">
+                  {item}
+                </p>
+              </motion.div>
+            ))}
+
+          </motion.div>
+
+        </div>
+
+      </div>
+    </section>
   )
 }

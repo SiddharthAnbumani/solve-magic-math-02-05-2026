@@ -22,7 +22,7 @@ export default function FounderSection() {
           className="relative w-full lg:w-1/2 h-[320px] sm:h-[420px] rounded-3xl overflow-hidden"
         >
           <Image
-            src="/founder.jpg"
+            src="/icon_founder.png"
             alt="Founder - Magic Maths"
             fill
             className="object-cover"

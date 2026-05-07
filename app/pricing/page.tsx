@@ -22,8 +22,6 @@ import {
 } from 'lucide-react'
 import TuitionPricingSection from '@/components/ TuitionPricingSection'
 import RegistrationSection from '@/components/RegistrationSection'
-import { CTASection } from '../programs/page'
-
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
@@ -127,7 +125,7 @@ const REGISTRATION_INCLUDES = [
   { icon: Award, label: 'Basic Level Certification' },
 ]
 
-const PHONE = '+917550223044'
+const PHONE = '+917200757754'
 
 export default function PricingPage() {
   return (

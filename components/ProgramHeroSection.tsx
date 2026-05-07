@@ -27,7 +27,7 @@ export default function ProgramsHeroCarousel({
 
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % programs.length)
-    }, 12000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [programs.length, paused])

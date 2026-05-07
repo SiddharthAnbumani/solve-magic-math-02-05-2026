@@ -18,6 +18,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { motion } from "framer-motion"
+import { fadeUp, fadeUpSoft, staggerContainer } from '@/lib/motion'
 import ProgramCard from '@/components/ProgramCard'
 import SectionHeading from '@/components/SectionHeading'
 import ProgramShowcase from '../components/ProgramShowcase'
@@ -116,50 +117,64 @@ const TESTIMONIALS = [
   },
 ] as const
 
-const PHONE = '+917550223044'
+const PHONE = '+917200757754'
 const WHATSAPP =
-  'https://wa.me/917550223044?text=Hi%2C%20I%27m%20interested%20in%20a%20free%20demo'
+  'https://wa.me/917200757754?text=Hi%2C%20I%27m%20interested%20in%20a%20free%20demo'
 
 export default function Home() {
   return (
-    <main className="bg-white mt-25">
+    <main className="bg-white mt-20 sm:mt-25">
       {/* HERO */}
 <VidPlusText
   img="/hero.mp4"
   overlayClass="bg-black/30 flex flex-col items-center justify-center px-4 text-center"
   text={
-    <div className=" space-y-6">
-      
-      <h1 className="font-monument-400 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-white leading-[1.05]">
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      animate="show"
+      className="space-y-6"
+    >
+      <motion.h1
+        variants={fadeUp}
+        className="font-monument-400 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-white leading-[1.05]"
+      >
         Smart Minds <br />
         Start Right <span className="text-indigo-300">Here</span>.
-      </h1>
+      </motion.h1>
 
-      <p className="font-montserrat-400 text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-        Abacus, Rubik's Cube, Vedic Maths and Tuition — taught by experienced trainers in small batches, so every child gets the attention they deserve.
-      </p>
+      <motion.p
+        variants={fadeUp}
+        className="font-montserrat-400 text-lg text-white/80 max-w-2xl mx-auto leading-relaxed"
+      >
+        Abacus, Rubik&apos;s Cube, Vedic Maths and Tuition — taught by experienced trainers in small batches, so every child gets the attention they deserve.
+      </motion.p>
 
-      {/* CTA BUTTON */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-        
+      {/* CTA BUTTONS */}
+      <motion.div
+        variants={fadeUp}
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4"
+      >
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-indigo-800 transition"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-indigo-800 hover:shadow-lg hover:shadow-indigo-700/40 hover:-translate-y-0.5 transition-all duration-300"
         >
           Book Free Demo <ArrowRight size={16} />
         </Link>
 
         <a
           href={`tel:${PHONE}`}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-red-800 text-white font-monument text-sm hover:bg-red-700 transition"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-red-800 text-white font-monument text-sm hover:bg-red-700 hover:shadow-lg hover:shadow-red-800/40 hover:-translate-y-0.5 transition-all duration-300"
         >
           <Phone size={16} /> Call Now
         </a>
-
-      </div>
+      </motion.div>
 
       {/* TRUST LINE */}
-      <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/80 pt-6">
+      <motion.div
+        variants={fadeUpSoft}
+        className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/80 pt-6"
+      >
         <div className="flex items-center gap-1.5">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star key={i} size={14} className="fill-indigo-300 text-indigo-300" />
@@ -169,9 +184,8 @@ export default function Home() {
 
         <span>200+ happy parents</span>
         <span className="hidden sm:inline">8 years in the neighbourhood</span>
-      </div>
-
-    </div>
+      </motion.div>
+    </motion.div>
   }
 />
 
@@ -342,7 +356,7 @@ export default function Home() {
 
       {/* CTA */}
 <section className="py-20 lg:py-24">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 
     <div className="relative overflow-hidden rounded-3xl h-[420px] lg:h-[480px]">
 
@@ -365,12 +379,12 @@ export default function Home() {
       <div className="relative h-full flex items-center px-8 lg:px-16">
         <div className="max-w-2xl">
 
-          <h2 className="font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-wide text-white drop-shadow-[0_6px_30px_rgba(0,0,0,0.8)]">
-            Enrol your child today.
+          <h2 className="font-monument-700 text-center sm:text-start text-3xl sm:text-4xl lg:text-5xl tracking-wide text-white drop-shadow-[0_6px_30px_rgba(0,0,0,0.8)]">
+            Enrol Your Child Today.
           </h2>
 
-          <p className="mt-4 font-montserrat-600 text-base lg:text-lg text-white max-w-5xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
-            Spaces are limited each batch — book a free demo and see if it&apos;s the right fit before you commit.
+          <p className="mt-4 font-montserrat-500 text-base lg:text-lg text-white max-w-5xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+            Spaces are limited each batch, book a free demo and see if it&apos;s the right fit before you commit.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -450,13 +464,13 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <p className="text-white text-lg leading-relaxed">
-              Magic Maths is more than just a program — it’s a transformation journey. 
+            <p className="text-white text-lg leading-relaxed text-center">
+              Magic Maths is more than just a program, it’s a transformation journey. 
               Through proven techniques like Abacus and Vedic Maths, children learn to 
               calculate faster, think sharper, and build strong cognitive skills.
             </p>
 
-            <p className="mt-6 text-indigo-100 text-lg leading-relaxed">
+            <p className="mt-6 text-indigo-100 text-lg leading-relaxed text-center">
               Beyond numbers, we focus on developing concentration, confidence, and a 
               love for learning — skills that stay with them for life.
             </p>

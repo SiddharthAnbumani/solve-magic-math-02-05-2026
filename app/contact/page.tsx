@@ -50,7 +50,7 @@ export default function ContactPage() {
                 name="Rajakilpakkam Branch"
                 image="/magic_maths_sembakkam.webp"
                 address="Anna Nagar, Chennai - 600040"
-                phone="7550223044"
+                phone="7200757754"
                 mapLink="#"
                 email="hello@magicmaths.in"
               />
@@ -64,39 +64,40 @@ export default function ContactPage() {
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-                  <Phone className="text-red-400 w-5 h-5" />
+                  <Phone className="text-white w-5 h-5" />
                 </div>
                 <div>
                   <p className="font-montserrat-600 text-slate-900">Call Us</p>
-                  <p className="text-slate-600 text-sm mt-1">+91 75502 23044</p>
+                  <p className="text-slate-600 text-sm mt-1">+91 7200757754</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-                  <Mail className="text-red-400 w-5 h-5" />
+                  <Mail className="text-white w-5 h-5" />
                 </div>
                 <div>
                   <p className="font-montserrat-600 text-slate-900">Email</p>
-                  <p className="text-slate-600 text-sm mt-1">hello@magicmaths.in</p>
+                  <p className="text-slate-600 text-sm mt-1">magicmathslearning@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-                  <MapPin className="text-red-400 w-5 h-5" />
+                  <MapPin className="text-white w-5 h-5" />
                 </div>
                 <div>
                   <p className="font-montserrat-600 text-slate-900">Location</p>
                   <p className="text-slate-600 text-sm mt-1">
-                    Anna Nagar, Chennai — 600040
+                    Chandra Villa, Rajakilpakkam
+Chennai -600073
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-700">
-                  <Clock className="text-red-400 w-5 h-5" />
+                  <Clock className="text-white w-5 h-5" />
                 </div>
                 <div>
                   <p className="font-montserrat-600 text-slate-900">Timings</p>
@@ -198,10 +199,7 @@ export default function ContactPage() {
             Book Free Demo
           </button>
 
-          {/* TRUST TEXT */}
-          <p className="text-xs text-center text-slate-400">
-            ⚡ We usually respond within 10 minutes
-          </p>
+
 
         </form>
       </div>
@@ -216,9 +214,9 @@ export default function ContactPage() {
   <div className="relative z-10">
 
     {/* TAG */}
-    <span className="inline-block text-xs bg-white/10 px-3 py-1 rounded-full tracking-wide">
+    {/* <span className="inline-block text-xs bg-white/10 px-3 py-1 rounded-full tracking-wide">
       FREE DEMO AVAILABLE
-    </span>
+    </span> */}
 
     {/* HEADLINE */}
     <h3 className="font-monument-700 text-2xl mt-4 leading-snug">
@@ -256,24 +254,21 @@ export default function ContactPage() {
   <div className="relative z-10 mt-8 space-y-3">
 
     <a
-      href="tel:+917550223044"
+      href="tel:+917200757754"
       className="block w-full text-center bg-white text-indigo-700 py-3 rounded-xl font-semibold shadow-md hover:scale-[1.02] hover:bg-gray-100 transition"
     >
       📞 Call & Book Now
     </a>
 
     <a
-      href="https://wa.me/917550223044"
+      href="https://wa.me/917200757754"
       target="_blank"
       className="block w-full text-center border border-white/30 py-3 rounded-xl font-medium hover:bg-white/10 transition"
     >
       💬 Chat on WhatsApp
     </a>
 
-    {/* TRUST LINE */}
-    <p className="text-xs text-white/60 text-center mt-2">
-      ⚡ Usually responds within 10 minutes
-    </p>
+
 
   </div>
 </div>
@@ -284,7 +279,7 @@ export default function ContactPage() {
 </section>
 
       {/* MAP */}
-      <section className="px-6 sm:px-10 lg:px-20 pb-20">
+      {/* <section className="px-6 sm:px-10 lg:px-20 pb-20">
         <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden border border-slate-200">
           <iframe
             src="https://maps.google.com/maps?q=Anna%20Nagar%20Chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -292,7 +287,7 @@ export default function ContactPage() {
             loading="lazy"
           />
         </div>
-      </section>
+      </section> */}
 
     </div>
   )

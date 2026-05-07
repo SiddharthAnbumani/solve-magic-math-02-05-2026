@@ -22,10 +22,10 @@ export default function Navbar() {
     <>
       {/* TOP BAR */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-indigo-700 border-b-2 border-black/10">
-        <div className="h-25 flex items-center justify-between px-4 sm:px-6 md:px-10 w-full">
+        <div className="h-20 sm:h-25 flex items-center justify-between px-4 sm:px-6 md:px-10 w-full">
           {/* Logo */}
           <Link href="/" onClick={closeMenu} className="flex items-center">
-            <img src="/image.png" alt="" className="h-15 sm:h-18" />
+            <img src="/image.png" alt="" className="h-13 sm:h-18" />
           </Link>
 
           {/* Desktop Menu */}
@@ -95,7 +95,7 @@ export default function Navbar() {
           <Link
             href="/programs"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             Programs
           </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
           <Link
             href="/tuition"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             Tuition
           </Link>
@@ -111,14 +111,14 @@ export default function Navbar() {
           <Link
             href="/pricing"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             Pricing
           </Link>
           <Link
             href="/gallery"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             Gallery
           </Link>
@@ -126,7 +126,7 @@ export default function Navbar() {
           <Link
             href="/about"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             About Us
           </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="font-monument text-3xl text-white tracking-wide hover:text-white/70 transition"
+            className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
             Contact Us
           </Link>

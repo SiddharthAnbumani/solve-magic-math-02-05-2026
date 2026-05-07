@@ -29,11 +29,11 @@ export default function Footer() {
           <div className="w-full lg:w-4/12 flex flex-col justify-between">
             
             {/* Logo */}
-            <Link href="/" className="block">
+            <Link href="/" className="flex justify-center">
               <img
                 src="/image.png" // replace with your logo path
                 alt="Magic Maths"
-                className="object-cover "
+                className="object-cover h-30 sm:h-40"
               />
             </Link>
 
@@ -94,7 +94,7 @@ export default function Footer() {
               <ul className="mt-5 space-y-4 text-[15px] text-center">
                 <li className="flex items-center justify-center gap-3 text-white/90 font-montserrat-600 ">
                   <Phone size={16} className="mt-0.5 shrink-0 text-red-400" />
-                  <a href="tel:+917550223044" className="hover:text-white text-white/90 transition">
+                  <a href="tel:+917200757754" className="hover:text-white text-white/90 transition">
                     +91 7200757754
                   </a>
                 </li>
@@ -128,14 +128,14 @@ export default function Footer() {
           </p>
     
       </div>
-      <div className="flex justify-center items-center bg-red-800 py-5">
-              <p className="font-montserrat-600  text-white/70 text-lg">
+      <div className="flex justify-center items-center bg-red-800 py-3 sm:py-5">
+              <p className="font-montserrat-600  text-white/70 text-sm sm:text-md">
             © {new Date().getFullYear()} Magic Maths. All rights reserved.
           </p>
       </div>
       <div className="flex justify-center items-center bg-black py-2">
-              <p className="font-montserrat-400  text-white text-lg">
-              Developed and maintained By <span className='ml-3 font-montserrat-600 tracking-widest text-center'><a href="solve.international">Solve</a> </span>
+              <p className="font-montserrat  text-white text-[15px]">
+              Developed and maintained By <span className='ml-2 font-montserrat-600 tracking-widest text-center'><a href="solve.international">Solve</a> </span>
           </p>
       </div>
     </footer>
