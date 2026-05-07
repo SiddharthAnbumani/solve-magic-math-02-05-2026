@@ -101,7 +101,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/tuition"
+            href="/programs/tuition"
             onClick={closeMenu}
             className="font-monument text-2xl text-white tracking-wide hover:text-white/70 transition"
           >
