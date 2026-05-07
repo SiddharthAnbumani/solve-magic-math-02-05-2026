@@ -16,7 +16,7 @@ type Program = {
 export default function ProgramsHeroCarousel({
   programs,
 }: {
-  programs: Program[]
+  programs: readonly Program[]
 }) {
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)

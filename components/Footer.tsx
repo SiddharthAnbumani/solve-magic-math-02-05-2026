@@ -133,6 +133,11 @@ export default function Footer() {
             © {new Date().getFullYear()} Magic Maths. All rights reserved.
           </p>
       </div>
+      <div className="flex justify-center items-center bg-black py-2">
+              <p className="font-montserrat-400  text-white text-lg">
+              Developed and maintained By <span className='ml-3 font-montserrat-600 tracking-widest text-center'><a href="solve.international">Solve</a> </span>
+          </p>
+      </div>
     </footer>
   )
 }

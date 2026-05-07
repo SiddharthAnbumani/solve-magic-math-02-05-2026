@@ -10,7 +10,7 @@ type Program = {
 }
 
 type Props = {
-  programs: Program[]
+  programs: readonly Program[]
 }
 
 export default function ProgramsSection({ programs }: Props) {
