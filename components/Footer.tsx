@@ -33,7 +33,7 @@ export default function Footer() {
               <img
                 src="/image.png" // replace with your logo path
                 alt="Magic Maths"
-                className="object-cover"
+                className="object-cover "
               />
             </Link>
 
@@ -92,14 +92,14 @@ export default function Footer() {
                 Contact
               </h4>
               <ul className="mt-5 space-y-4 text-[15px] text-center">
-                <li className="flex items-center gap-3 text-white/90 font-montserrat-600 ">
+                <li className="flex items-center justify-center gap-3 text-white/90 font-montserrat-600 ">
                   <Phone size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <a href="tel:+917550223044" className="hover:text-white text-white/90 transition">
                     +91 7200757754
                   </a>
                 </li>
 
-                <li className="flex items-start gap-3 text-slate-400">
+                <li className="flex items-start flex-justify-center gap-3 text-slate-400">
                   <Mail size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <a
                     href="mailto:hello@magicmaths.in"
@@ -109,10 +109,10 @@ export default function Footer() {
                   </a>
                 </li>
 
-                <li className="flex items-start gap-3 text-white/90 font-montserrat-600">
+                <li className="flex items-start  justify-center gap-3 text-white/90 font-montserrat-600">
                   <MapPin size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <span>
-                   Chandra Villa, Rajakilpakkam Chennai -600073
+                   Chandra Villa, Rajakilpakkam <br/>Chennai -600073
                   </span>
                 </li>
               </ul>

@@ -91,16 +91,16 @@ export default function AboutPage() {
 
       {/* TESTIMONIALS */}
       <section className="py-24 bg-red-800 text-white">
-  <div className="px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto">
+  <div className="px-6 sm:px-10 lg:px-20 max-w-8xl mx-auto">
 
     {/* Heading */}
-    <div className="max-w-2xl">
-      <h2 className="font-monument-700 text-3xl sm:text-4xl">
-        What Parents Notice First
+    <div className="max-w-3xl">
+      <h2 className="font-monument-700 text-3xl sm:text-4xl text-center sm:text-start">
+        What Parents Say About Us
       </h2>
 
-      <p className="mt-4 text-white/80 font-montserrat-400">
-        Real changes, real confidence — within weeks.
+      <p className="mt-4 text-white/80 font-montserrat-400 text-center sm:text-start text-sm sm:text-base">
+        Real changes, real confidence within weeks.
       </p>
     </div>
 
@@ -109,16 +109,16 @@ export default function AboutPage() {
 
       {[
         {
-          text: "Within 2 months, my daughter started doing calculations faster than me.",
-          name: "Priya, Anna Nagar",
+          text: "Bharathi Ma’am is exceptionally kind and patient with children. She has been truly inspiring, helping kids develop a genuine interest in mathematics through abacus learning. With her guidance, children not only improve their calculation speed but also strengthen memory, focus, and overall mathematical confidence.",
+          name: "Mrs.Sathiya Kalai",
         },
         {
-          text: "He used to hate maths. Now it’s his favourite subject.",
-          name: "Karthik, Velachery",
+          text: "The children are learning very well under Ma’am’s excellent guidance. They are highly interested in attending the classes and have also successfully participated in abacus competitions. We sincerely thank Bharathi Ma’am for her dedication and support.",
+          name: "Hema Latha"
         },
         {
-          text: "The confidence boost is unbelievable. Not just marks — mindset changed.",
-          name: "Meena, OMR",
+          text: "My son is currently learning Abacus Level 2 at Magic Maths Learning and Educational Institute. Bharathi Ma’am teaches very clearly and effectively, ensuring every child understands the concepts well. She treats each student with equal care and attention, just like her own. I am very satisfied with her teaching approach, and my child attends the classes with great interest and enthusiasm.",
+          name: "Santhosh Shivan",
         },
       ].map((t, i) => (
         <div
@@ -135,14 +135,15 @@ export default function AboutPage() {
             </span>
 
             {/* rating dots */}
-            <div className="flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-2 h-2 bg-yellow-400 rounded-full"
-                />
-              ))}
-            </div>
+       <div className="flex gap-1">
+  {Array.from({ length: 5 }).map((_, i) => (
+    <Star
+      key={i}
+      size={14}
+      className="text-yellow-400 fill-yellow-400"
+    />
+  ))}
+</div>
           </div>
         </div>
       ))}
@@ -224,26 +225,44 @@ export default function AboutPage() {
   </div>
 </section>
       {/* CTA */}
-      <section className="px-6 sm:px-10 lg:px-20 pb-20">
-        <div className="max-w-4xl mx-auto bg-indigo-700 text-white rounded-3xl p-10 text-center">
+<section className="relative py-28 px-6 sm:px-10 lg:px-20 overflow-hidden">
 
-          <h2 className="font-monument-700 text-2xl">
-            Ready to Transform Learning?
-          </h2>
+  {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
+    <img
+      src="/cta/about_cta.jpg"
+      alt="Learning background"
+      className="w-full h-full object-cover"
+    />
+    {/* dark + indigo overlay for brand tone */}
+    <div className="absolute inset-0 bg-black/25 " />
+  </div>
 
-          <p className="mt-3 text-white/80">
-            Book a free demo class and see the difference.
-          </p>
+  {/* CONTENT */}
+  <div className="relative max-w-5xl mx-auto text-center">
 
-          <a
-            href="/contact"
-            className="inline-block mt-6 bg-red-800 px-6 py-3 rounded-full font-montserrat-600 hover:bg-red-700 transition"
-          >
-            Book Free Demo
-          </a>
+    <div className="backdrop-blur-md bg-black/30 border border-white/20 rounded-[2.5rem] p-12 sm:p-16 shadow-2xl">
 
-        </div>
-      </section>
+      <h2 className="font-monument-700 text-3xl sm:text-4xl text-white leading-tight">
+        Ready to Transform Learning?
+      </h2>
+
+      <p className="mt-4 text-white/80 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+        Book a free demo class and see how confidence and clarity begin in just one session.
+      </p>
+
+      <div className="mt-8 flex justify-center">
+        <a
+          href="/contact"
+          className="relative inline-flex items-center justify-center px-8 py-4 rounded-full font-montserrat-600 bg-red-800 hover:bg-red-700 transition text-white shadow-lg shadow-red-900/30"
+        >
+          Book Free Demo
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     </div>
   )

@@ -21,6 +21,7 @@ import { motion } from "framer-motion"
 import ProgramCard from '@/components/ProgramCard'
 import SectionHeading from '@/components/SectionHeading'
 import ProgramShowcase from '../components/ProgramShowcase'
+import VidPlusText from '../components/VideoPlusText'
 import ProgramsSection from '@/components/ProgramsSection'
 const PROGRAMS = [
   {
@@ -95,20 +96,23 @@ const RESULTS = [
 ] as const
 
 const TESTIMONIALS = [
+
   {
-    quote: `My daughter calculates faster than I do now. She actually looks forward to her Abacus class — and that's a first.`,
-    parent: 'Lakshmi R.',
-    child: 'Parent of Aanya, 8',
+    quote: `My son is currently learning Abacus Level 2 at Magic Maths Learning and Educational Institute. Bharathi Ma’am teaches very clearly and effectively, ensuring every child understands the concepts well. She treats each student with equal care and attention, just like her own. I am very satisfied with her teaching approach, and my child attends the classes with great interest and enthusiasm.`,
+    parent: 'Santhosh Shivan',
+    child: '',
   },
+
   {
-    quote: `The trainers truly care. In three months my son went from saying he hates maths to begging for extra worksheets.`,
-    parent: 'Karthik V.',
-    child: 'Parent of Arjun, 11',
+    quote: `The children are learning very well under Ma’am’s excellent guidance. They are highly interested in attending the classes and have also successfully participated in abacus competitions. We sincerely thank Bharathi Ma’am for her dedication and support.`,
+    parent: 'Hema Latha',
+    child: '',
   },
+
   {
-    quote: `Small batches make a huge difference. We tried two other places before — this is the one we stayed with.`,
-    parent: 'Priya S.',
-    child: 'Parent of Meera, 9',
+    quote: `Bharathi Ma’am is exceptionally kind and patient with children. She has been truly inspiring, helping kids develop a genuine interest in mathematics through abacus learning. With her guidance, children not only improve their calculation speed but also strengthen memory, focus, and overall mathematical confidence.`,
+    parent: 'Mrs. Sathiya Kalai',
+    child: '',
   },
 ] as const
 
@@ -118,231 +122,221 @@ const WHATSAPP =
 
 export default function Home() {
   return (
-    <main className="bg-white mt-10">
+    <main className="bg-white mt-25">
       {/* HERO */}
-      <section className="relative overflow-hidden mt-20">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(67,56,202,0.12),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 lg:pb-28">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-7 order-2 lg:order-1">
-              {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800 text-md borde text-white  border-white font-montserrat-500 ">
-                <Sparkles size={12} /> Brain Development for Ages 5–16
-              </span> */}
-              <h1 className="mt-6 font-monument-400 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-slate-900 leading-[1.05]">
-                Smart Minds <br className="hidden sm:block" />
-                Start Right{' '}
-                <span className="relative inline-block ">
-                  <span className="relative z-10 text-indigo-700">Here</span>
-                  {/* <span className="absolute inset-x-0 bottom-1 h-3 bg-black z-0 rounded-sm" /> */}
-                </span>
-                .
-              </h1>
-              <p className="mt-6 font-montserrat-400 text-lg text-slate-600 max-w-xl leading-relaxed">
-                Abacus, Rubik&apos;s Cube, Vedic Maths and Tuition — taught by experienced trainers in small batches, so every child gets the attention they deserve.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-slate-800 transition"
-                >
-                  Book Free Demo <ArrowRight size={16} />
-                </Link>
-                <a
-                  href={`tel:${PHONE}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-red-800 text-white font-monument text-sm hover:border-slate-900 transition"
-                >
-                  <Phone size={16} /> Call Now
-                </a>
-              </div>
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-                <div className="flex items-center gap-1.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-indigo-700 text-indigo-700" />
-                  ))}
-                  <span className="ml-1 font-montserrat-600">4.9</span>
-                </div>
-                <span className="font-montserrat-500">200+ happy parents</span>
-                <span className="font-montserrat-500 hidden sm:inline">
-                  8 years in the neighbourhood
-                </span>
-              </div>
-            </div>
+<VidPlusText
+  img="/hero.mp4"
+  overlayClass="bg-black/30 flex flex-col items-center justify-center px-4 text-center"
+  text={
+    <div className=" space-y-6">
+      
+      <h1 className="font-monument-400 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-white leading-[1.05]">
+        Smart Minds <br />
+        Start Right <span className="text-indigo-300">Here</span>.
+      </h1>
 
-            <div className="lg:col-span-5 order-1 lg:order-2">
-              <div className="relative aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 rounded-3xl bg-slate-900 rotate-3" />
-                <div className="absolute inset-0 rounded-3xl bg-indigo-700 -rotate-3" />
-                <div className="absolute inset-0 rounded-3xl bg-white border border-slate-200 shadow-xl p-8 flex flex-col justify-between">
-                  <div>
-                    <span className="font-montserrat-500 text-xs text-slate-500 uppercase tracking-widest">
-                      This week
-                    </span>
-                    <h3 className="mt-2 font-monument-700 text-2xl text-slate-900">
-                      Free Demo Class
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5 font-montserrat-400 text-sm text-slate-700">
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-700" />
-                      45-minute trial
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-700" />
-                      Personal aptitude check
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-700" />
-                      Honest program advice
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-700" />
-                      Zero pressure to enrol
-                    </li>
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="mt-2 inline-flex items-center gap-2 font-montserrat-600 text-sm text-slate-900 hover:gap-3 transition-all"
-                  >
-                    Reserve a slot <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+      <p className="font-montserrat-400 text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+        Abacus, Rubik's Cube, Vedic Maths and Tuition — taught by experienced trainers in small batches, so every child gets the attention they deserve.
+      </p>
+
+      {/* CTA BUTTON */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+        
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-indigo-800 transition"
+        >
+          Book Free Demo <ArrowRight size={16} />
+        </Link>
+
+        <a
+          href={`tel:${PHONE}`}
+          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-red-800 text-white font-monument text-sm hover:bg-red-700 transition"
+        >
+          <Phone size={16} /> Call Now
+        </a>
+
+      </div>
+
+      {/* TRUST LINE */}
+      <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/80 pt-6">
+        <div className="flex items-center gap-1.5">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} size={14} className="fill-indigo-300 text-indigo-300" />
+          ))}
+          <span className="ml-1 font-montserrat-600">4.9</span>
         </div>
-      </section>
+
+        <span>200+ happy parents</span>
+        <span className="hidden sm:inline">8 years in the neighbourhood</span>
+      </div>
+
+    </div>
+  }
+/>
 
 <AboutSection/>
 <ProgramsSection programs={PROGRAMS} />
 
-    <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+   <section className="py-24 bg-white">
+  <div className="mx-auto max-w-8xl px-6 lg:px-30">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <div className="grid lg:grid-cols-2 gap-20 items-start">
 
-          {/* 🔥 LEFT: WHY (Trust Narrative) */}
-          <div className="space-y-10">
+      {/* 🔵 LEFT: TRUST (soft, calm, breathable) */}
+      <div className="space-y-12 relative">
 
-            <div>
-              <p className="font-montserrat-700 text-xs uppercase tracking-widest text-indigo-600">
-                Why parents choose us
-              </p>
+        {/* subtle vertical accent line */}
+        <div className="absolute left-0 top-0 h-full w-[1px] bg-gradient-to-b from-indigo-100 via-transparent to-transparent" />
 
-              <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
-                Trusted by families in the neighbourhood.
-              </h2>
+        <div className="pl-6">
+          <p className="font-montserrat-700 text-xs uppercase tracking-widest text-indigo-600">
+            Why parents choose us
+          </p>
 
-              <p className="mt-4 text-slate-600 text-base leading-relaxed max-w-md">
-                The basics, done with care. No flashy gimmicks — just real teaching, real results.
-              </p>
-            </div>
+          <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
+            Trusted by families in the neighbourhood.
+          </h2>
 
-            {/* WHY LIST (no cards, just clean rows) */}
-            <div className="space-y-6">
-              {WHY.map(({ icon: Icon, title, text }) => (
-                <motion.div
-                  key={title}
-                  whileHover={{ x: 6 }}
-                  className="flex gap-4 items-start"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-                    <Icon size={18} strokeWidth={1.8} />
-                  </div>
+          <p className="mt-5 text-slate-600 text-base leading-relaxed max-w-md">
+            The basics, done with care. No flashy gimmicks — just real teaching, real results.
+          </p>
+        </div>
 
-                  <div>
-                    <h3 className="font-monument-700 text-lg text-slate-900">
-                      {title}
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600 leading-relaxed">
-                      {text}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+        {/* CLEAN LIST (more breathing + separators instead of cards) */}
+        <div className="space-y-7 pl-6">
+          {WHY.map(({ icon: Icon, title, text }) => (
+            <motion.div
+              key={title}
+              whileHover={{ x: 6 }}
+              className="flex gap-4 items-start group"
+            >
+              <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition">
+                <Icon size={18} strokeWidth={1.8} />
+              </div>
 
-          </div>
+              <div className="border-b border-slate-100 pb-5 w-full">
+                <h3 className="font-monument-700 text-lg text-slate-900">
+                  {title}
+                </h3>
+                <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                  {text}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-          {/* 🔥 RIGHT: RESULTS (Impact Narrative) */}
-          <div className="space-y-10 lg:pt-10">
+      </div>
 
-            <div>
-              <p className="font-montserrat-700 text-xs uppercase tracking-widest text-red-500">
-                What kids walk away with
-              </p>
+      {/* 🔴 RIGHT: RESULTS (structured timeline feel) */}
+      <div className="space-y-12 lg:pt-10">
 
-              <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
-                Results you’ll actually notice at home.
-              </h2>
-            </div>
+        <div>
+          <p className="font-montserrat-700 text-xs uppercase tracking-widest text-red-500">
+            What kids walk away with
+          </p>
 
-            {/* RESULTS LIST (visual storytelling, not cards) */}
-            <div className="space-y-8">
+          <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl text-slate-900 leading-tight">
+            Results you’ll actually notice at home.
+          </h2>
+        </div>
 
-              {RESULTS.map(({ icon: Icon, title, text }, i) => (
-                <motion.div
-                  key={title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex gap-4 items-start"
-                >
+        {/* TIMELINE STYLE LIST */}
+        <div className="relative space-y-10">
 
-                  {/* number marker */}
-                  <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-montserrat-700 text-sm">
-                    {i + 1}
-                  </div>
+          {/* vertical line */}
+          <div className="absolute left-5 top-2 bottom-2 w-[1px] bg-slate-200" />
 
-                  <div>
-                    <h3 className="font-monument-700 text-lg text-slate-900">
-                      {title}
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600 leading-relaxed">
-                      {text}
-                    </p>
-                  </div>
+          {RESULTS.map(({ title, text }, i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex gap-5 items-start relative"
+            >
 
-                </motion.div>
-              ))}
+              {/* step dot */}
+              <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-indigo-600 text-indigo-600 flex items-center justify-center font-montserrat-700 text-sm shadow-sm">
+                {i + 1}
+              </div>
 
-            </div>
+              <div className="pt-1">
+                <h3 className="font-monument-700 text-lg text-slate-900">
+                  {title}
+                </h3>
+                <p className="mt-1 text-sm text-slate-600 leading-relaxed max-w-md">
+                  {text}
+                </p>
+              </div>
 
-          </div>
+            </motion.div>
+          ))}
 
         </div>
+
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
       {/* TESTIMONIALS */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-red-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            align="center"
-            eyebrow="What parents say"
-            title="Testimonials"
+         <div className="max-w-2xl mx-auto text-center">
+  
+  <p className="inline-block font-montserrat-700 text-xs uppercase tracking-wide text-white/80">
+    What parents say
+  </p>
+
+  <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl lg:text-5xl tracking-wide text-white">
+    Testimonials
+  </h2>
+
+</div>
+<div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+
+  {TESTIMONIALS.map((t) => (
+    <figure
+      key={t.parent}
+      className="h-full p-7 rounded-2xl bg-white border border-slate-200 flex flex-col"
+    >
+
+      {/* STAR RATING */}
+      <div className="flex gap-1">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star
+            key={i}
+            size={14}
+            className="fill-yellow-400 text-yellow-500"
           />
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <figure
-                key={t.parent}
-                className="p-7 rounded-2xl bg-white border border-slate-200 flex flex-col"
-              >
-                <div className="flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className="fill-yellow-400 text-yellow-500" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 font-montserrat-400 text-base text-slate-700 leading-relaxed">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-6 pt-5 border-t border-slate-100">
-                  <div className="font-montserrat-600 text-sm text-slate-900">{t.parent}</div>
-                  <div className="font-montserrat-400 text-xs text-slate-500">{t.child}</div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+        ))}
+      </div>
+
+      {/* 🔥 CONTENT (10/12 equivalent) */}
+      <div className="flex-1 mt-4">
+        <blockquote className="font-montserrat-400 text-base text-slate-700 leading-relaxed">
+          &ldquo;{t.quote}&rdquo;
+        </blockquote>
+      </div>
+
+      {/* 🔥 FOOTER (2/12 equivalent) */}
+      <div className="mt-6 pt-5 border-t border-slate-100 shrink-0">
+        <div className="font-monument text-sm text-indigo-700 tracking-wide">
+          {t.parent}
+        </div>
+        <div className="font-montserrat-400 text-xs text-slate-500">
+          {t.child}
+        </div>
+      </div>
+
+    </figure>
+  ))}
+
+</div>
         </div>
       </section>
 

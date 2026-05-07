@@ -66,22 +66,26 @@ export default function FounderSection() {
                 believe in themselves, and approach challenges with confidence — in academics and in life.
                 </p>
                         {/* HIGHLIGHTS */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-montserrat-500">
-              5+ Years Experience
-            </span>
-            <span className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-montserrat-500">
-              1000+ Students Trained
-            </span>
-            <span className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-montserrat-500">
-              Certified Trainer
-            </span>
-          </div>
+          <div className="flex mt-10 items-center justify-center gap-3">
+  
+  <span className="px-4 py-1.5 rounded-full bg-indigo-700  text-white text-xs font-montserrat-500 tracking-wide whitespace-nowrap">
+    7+ Years Experience
+  </span>
+
+  <span className="px-4 py-1.5 rounded-full bg-indigo-700  text-white text-xs font-montserrat-500 tracking-wide whitespace-nowrap">
+    200+ Students Trained
+  </span>
+
+  <span className="px-4 py-1.5 rounded-full bg-indigo-700  text-white text-xs font-montserrat-500 tracking-wide whitespace-nowrap">
+    Certified Mental Arithmetic Instructor
+  </span>
+
+</div>
 
           {/* SIGNATURE */}
           <div className="mt-10">
             <p className="font-monument-700 text-xl text-slate-900">
-              Bharathi
+                BHARATHI.P <span className='font-montserrat-400 text-lg text-black/75'>M.sc.,B.ed.(mathematic)</span>
             </p>
             <p className="text-sm text-slate-500 font-montserrat-400">
               Founder, Magic Maths

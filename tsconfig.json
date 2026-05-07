@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "components/RegistrationSection.tsx"  ],
+, "components/RegistrationSection.tsx", "components/VideoPlusText.jsx"  ],
   "exclude": ["node_modules"]
 }
