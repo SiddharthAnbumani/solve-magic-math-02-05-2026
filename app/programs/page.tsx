@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import { ArrowRight, ArrowUpRight, Phone } from 'lucide-react'
 import { PROGRAMS } from '@/data/programs'
 
-const PHONE = '+917550223044'
-
 export const metadata: Metadata = {
   title: 'Our Programs — Solve Magic Maths',
   description:
@@ -105,8 +103,9 @@ export default function ProgramsPage() {
 
 
 import { MessageCircle } from "lucide-react"
+import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/contact"
 
-export function CTASection({ PHONE, WHATSAPP }) {
+export function CTASection() {
   return (
     <section className="py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -160,7 +159,7 @@ export function CTASection({ PHONE, WHATSAPP }) {
                   href={`tel:${PHONE}`}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-indigo-700 font-monument text-sm hover:bg-gray-100 transition"
                 >
-                  <Phone size={16} /> +91 75502 23044
+                  <Phone size={16} /> {PHONE_DISPLAY}
                 </a>
 
                 {/* WhatsApp 🔥 NEW */}

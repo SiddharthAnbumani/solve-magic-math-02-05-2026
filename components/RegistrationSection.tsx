@@ -1,9 +1,20 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles } from "lucide-react"
+import { Sparkles, type LucideIcon } from "lucide-react"
 
-export default function RegistrationSection({ REGISTRATION_INCLUDES = [] }) {
+type Inclusion = {
+  icon: LucideIcon
+  label: string
+}
+
+type Props = {
+  REGISTRATION_INCLUDES?: readonly Inclusion[]
+}
+
+export default function RegistrationSection({
+  REGISTRATION_INCLUDES = [],
+}: Props) {
   return (
     <section className="px-6 sm:px-10 lg:px-20 py-14">
 
