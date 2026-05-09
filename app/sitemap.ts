@@ -8,7 +8,7 @@ import { LOCATIONS } from '@/data/locations'
  * to override the fallback.
  */
 const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://magicmathslearning.com'
+ 'https://magicmathslearning.com'
 ).replace(/\/$/, '')
 
 type ChangeFreq = NonNullable<
