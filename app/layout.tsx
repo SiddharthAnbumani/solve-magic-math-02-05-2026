@@ -5,6 +5,7 @@ import { montserrat, monument } from "./fonts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import InternalLinkHub from "@/components/seo/InternalLinkHub";
 
 export const metadata: Metadata = {
   title: "Magic Maths - Educational Instituition",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-montserrat-400">
         <Navbar />
         <div className="flex-1">{children}</div>
+        <InternalLinkHub />
         <Footer />
         <WhatsAppFloat />
       </body>
