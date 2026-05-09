@@ -45,6 +45,7 @@ export const ABACUS: Program = {
     'Boosted confidence in maths and beyond',
   ],
   curriculum: [
+    { title: 'Level 0 (L0)', description: 'Introduction to Beads, Bead Count and Which Fingers to Use' },
     { title: 'Beginner (L1–L2)', description: 'Bead positions, single-digit operations, finger techniques.' },
     { title: 'Intermediate (L3–L4)', description: 'Multi-digit addition, subtraction, visualisation drills.' },
     { title: 'Advanced (L5–L6)', description: 'Mental abacus, multiplication, division, decimals.' },

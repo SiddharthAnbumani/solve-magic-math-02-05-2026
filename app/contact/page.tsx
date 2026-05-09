@@ -38,7 +38,7 @@ export default function ContactPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <BranchCard
-                name="Sembakkam Branch"
+                name="Santhosapuram Branch"
                 image="/magic_maths_sembakkam.webp"
                 address="Chandra Villa, 28/2 Ponniyamman Kovil Street, Rajakilpakkam, Chennai - 600073"
                 phone="7200757754"
@@ -255,17 +255,17 @@ Chennai -600073
 
     <a
       href="tel:+917200757754"
-      className="block w-full text-center bg-white text-indigo-700 py-3 rounded-xl font-semibold shadow-md hover:scale-[1.02] hover:bg-gray-100 transition"
+      className="block w-full text-center bg-white text-indigo-700 py-3 rounded-xl font-montserrat-500 shadow-md hover:scale-[1.02] hover:bg-gray-100 transition"
     >
-      📞 Call & Book Now
+       Call & Book Now
     </a>
 
     <a
       href="https://wa.me/917200757754"
       target="_blank"
-      className="block w-full text-center border border-white/30 py-3 rounded-xl font-medium hover:bg-white/10 transition"
+      className="block w-full text-center border border-white/30 py-3 rounded-xl font-montserrat-500 bg-green-600 text-white transition"
     >
-      💬 Chat on WhatsApp
+      Chat on WhatsApp
     </a>
 
 

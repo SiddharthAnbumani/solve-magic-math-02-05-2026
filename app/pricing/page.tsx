@@ -215,7 +215,7 @@ export default function PricingPage() {
   </p>
 
   <p className="text-sm text-slate-600">
-    Includes T-shirt, bag, and Level 0 onboarding kit
+    Includes T-shirt, bag, and Level 0 Examination Fee
   </p>
 
 </div>

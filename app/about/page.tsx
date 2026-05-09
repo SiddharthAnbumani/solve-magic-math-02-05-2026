@@ -116,12 +116,12 @@ export default function AboutPage() {
 
       {[
         {
-          name: "Sembakkam",
-          sub: "Flagship center · 30+ students",
+          name: "Santhosapuram",
+          sub: "Flagship center · 100+ students",
         },
         {
           name: "Rajakikpakkam",
-          sub: "Top rated by parents",
+          sub: "Brand New Branch",
         },
         // {
         //   name: "OMR",
