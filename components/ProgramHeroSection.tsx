@@ -13,11 +13,33 @@ type Program = {
   href?: string
 }
 
+type Slide =
+  | { kind: 'program'; title: string; image: string; href: string }
+  | { kind: 'all'; title: string; image: string; href: '/programs' }
+
+const ALL_PROGRAMS_SLIDE: Slide = {
+  kind: 'all',
+  title: 'Explore All Programs',
+  // TODO: swap with a hero collage if you have one (e.g. /all-programs.webp).
+  image: '/_.webp',
+  href: '/programs',
+}
+
 export default function ProgramsHeroCarousel({
   programs,
 }: {
   programs: readonly Program[]
 }) {
+  const slides: Slide[] = [
+    ...programs.map<Slide>((p) => ({
+      kind: 'program',
+      title: p.title,
+      image: p.image,
+      href: p.href ?? '/programs',
+    })),
+    ALL_PROGRAMS_SLIDE,
+  ]
+
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
 
@@ -26,11 +48,11 @@ export default function ProgramsHeroCarousel({
     if (paused) return
 
     const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % programs.length)
+      setActive((prev) => (prev + 1) % slides.length)
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [programs.length, paused])
+  }, [slides.length, paused])
 
   return (
     <section
@@ -40,7 +62,7 @@ export default function ProgramsHeroCarousel({
     >
       {/* 🔥 BACKGROUND STACK (NO GAP) */}
       <div className="absolute inset-0">
-        {programs.map((program, i) => (
+        {slides.map((slide, i) => (
           <motion.div
             key={i}
             className="absolute inset-0"
@@ -54,13 +76,19 @@ export default function ProgramsHeroCarousel({
               ease: [0.25, 1, 0.5, 1],
             }}
             style={{
-              backgroundImage: `url(${program.image})`,
+              backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50" />
+            {/* Overlay — slightly heavier on the all-programs slide for typographic punch */}
+            <div
+              className={`absolute inset-0 ${
+                slide.kind === 'all'
+                  ? 'bg-gradient-to-br from-indigo-900/85 via-black/65 to-red-900/55'
+                  : 'bg-black/50'
+              }`}
+            />
           </motion.div>
         ))}
       </div>
@@ -93,33 +121,51 @@ export default function ProgramsHeroCarousel({
 
   {/* 🔥 Title (with highlight) */}
   <h2 className="mt-3 font-monument-700 text-xl sm:text-4xl lg:text-5xl text-white leading-tight drop-shadow-[0_6px_30px_rgba(0,0,0,0.8)]">
-    Four ways to grow a{" "}
-    <span className="text-white tracking-wide text-2xl sm:text-4xl lg:text-5xl">Sharper Mind</span>.
+    {slides[active].kind === 'all' ? (
+      <>
+        Seven ways to grow a{" "}
+        <span className="text-white tracking-wide text-2xl sm:text-4xl lg:text-5xl">Sharper Mind</span>.
+      </>
+    ) : (
+      <>
+        Four ways to grow a{" "}
+        <span className="text-white tracking-wide text-2xl sm:text-4xl lg:text-5xl">Sharper Mind</span>.
+      </>
+    )}
   </h2>
 
  <p className="text-white font-montserrat-700 text-3xl uppercase drop-shadow-md mt-10">
- {programs[active].title}
+   {slides[active].title}
   </p>
 </motion.div>
           <Link
-            href={programs[active].href || "/programs"}
+            href={slides[active].href}
             className="inline-flex items-center gap-2 mt-8 px-6 py-2 sm:py-3 bg-red-800 hover:bg-indigo-700 text-white rounded-lg font-semibold transition font-monument-400 tracking-wide"
           >
-            Explore <span className="hidden sm:block">{programs[active].title}</span> Program
-            <ArrowUpRight size={18} /> 
+            {slides[active].kind === 'all' ? (
+              <>Explore All Programs</>
+            ) : (
+              <>
+                Explore <span className="hidden sm:block">{slides[active].title}</span> Program
+              </>
+            )}
+            <ArrowUpRight size={18} />
           </Link>
         </motion.div>
       </div>
 
       {/* 🔥 DOTS */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {programs.map((_, i) => (
+        {slides.map((s, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
+            aria-label={
+              s.kind === 'all' ? 'Go to: Explore all programs' : `Go to: ${s.title}`
+            }
             className={`h-2 rounded-full transition-all duration-300 ${
-              active === i ? "w-6 bg-white" : "w-2 bg-white/50"
-            }`}
+              active === i ? 'w-6 bg-white' : 'w-2 bg-white/50'
+            } ${s.kind === 'all' ? 'ring-1 ring-white/40 ring-offset-1 ring-offset-transparent' : ''}`}
           />
         ))}
       </div>
