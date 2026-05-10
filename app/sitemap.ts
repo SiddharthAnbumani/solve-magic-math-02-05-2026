@@ -4,11 +4,11 @@ import { LOCATIONS } from '@/data/locations'
 
 /**
  * Production base URL.
- * Set NEXT_PUBLIC_SITE_URL in your Vercel project env (e.g. https://magicmaths.in)
- * to override the fallback.
+ * Canonical: https://www.magicmathslearning.com
+ * Set NEXT_PUBLIC_SITE_URL in Vercel env to override.
  */
 const SITE_URL = (
- 'https://magicmathslearning.com'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.magicmathslearning.com'
 ).replace(/\/$/, '')
 
 type ChangeFreq = NonNullable<

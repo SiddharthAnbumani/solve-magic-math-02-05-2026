@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Mail, MapPin, Phone } from 'lucide-react'
 
 const QUICK_LINKS = [
@@ -102,7 +101,7 @@ export default function Footer() {
                 <li className="flex items-start flex-justify-center gap-3 text-slate-400">
                   <Mail size={16} className="mt-0.5 shrink-0 text-red-400" />
                   <a
-                    href="mailto:hello@magicmaths.in"
+                    href="mailto:magicmathslearning@gmail.com"
                     className="hover:text-white transition text-white/90  font-montserrat-600"
                   >
                     magicmathslearning@gmail.com 

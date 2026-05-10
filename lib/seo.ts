@@ -4,7 +4,7 @@
  */
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://magicmaths.in'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.magicmathslearning.com'
 ).replace(/\/$/, '')
 
 export const SITE_NAME = 'Magic Maths Learning & Education Institute'

@@ -52,7 +52,7 @@ export default function ContactPage() {
                 address="Anna Nagar, Chennai - 600040"
                 phone="7200757754"
                 mapLink="#"
-                email="hello@magicmaths.in"
+                email="magicmathslearning@gmail.com"
               />
             </div>
           </div>
