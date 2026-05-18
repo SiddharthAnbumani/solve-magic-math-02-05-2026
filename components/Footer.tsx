@@ -9,6 +9,26 @@ import {
   Phone,
 } from "lucide-react";
 
+type FooterData = {
+  brand: { name: string; logo: string; tagline: string; bottomTagline: string };
+  quickLinks: { label: string; href: string }[];
+  programs: { label: string; href: string }[];
+  contact: { phone: string; email: string; address: string[] };
+  developer: { name: string; website: string };
+  theme: {
+    accent: string;
+    footerBackground: string;
+    secondaryBackground: string;
+    copyrightBackground: string;
+    developerBackground: string;
+    textPrimary: string;
+    textSecondary: string;
+    border: string;
+    iconBackground: string;
+    glow: string;
+  };
+};
+
 export default function PremiumFooter() {
 
   /* =========================================
@@ -152,7 +172,7 @@ export default function PremiumFooter() {
    MAIN FOOTER
 ========================================= */
 
-function Footer({ data }) {
+function Footer({ data }: { data: FooterData }) {
 
   return (
     <footer
@@ -503,6 +523,10 @@ function FooterLinksSection({
   title,
   links,
   data,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+  data: FooterData;
 }) {
 
   return (
@@ -560,6 +584,12 @@ function ContactItem({
   value,
   href,
   data,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href: string;
+  data: FooterData;
 }) {
 
   return (
