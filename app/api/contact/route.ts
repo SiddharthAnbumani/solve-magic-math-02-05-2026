@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Forward to the CRM backend
-    const crmUrl = `${process.env.CRM_API_URL || 'http://localhost:3001'}/api/leads`
+    const crmUrl = `${process.env.CRM_API_URL || 'https://solve-magic-maths-crm-node.onrender.com'}/api/leads`
     const crmRes = await fetch(crmUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
