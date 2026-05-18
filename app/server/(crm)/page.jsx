@@ -77,11 +77,11 @@ function StatCard({ label, value, accent, dotColor, textColor, loading }) {
     <div className={`bg-white dark:bg-[#111111] rounded-2xl border ${accent} p-5 shadow-sm dark:shadow-[0_1px_4px_rgba(0,0,0,0.7)]`}>
       {loading
         ? <div className="h-8 w-12 bg-gray-100 dark:bg-[#1a1a1a] rounded-lg animate-pulse mb-2" />
-        : <p className="text-3xl font-black text-gray-900 dark:text-gray-50">{value ?? '—'}</p>
+        : <p className="text-3xl font-black text-gray-900 dark:text-gray-50 font-monument">{value ?? '—'}</p>
       }
       <div className="flex items-center gap-2 mt-2">
         <span className={`w-2 h-2 rounded-full ${dotColor}`} />
-        <p className={`text-xs font-bold uppercase tracking-widest ${textColor}`}>{label}</p>
+        <p className={`text-xs font-monument uppercase tracking-widest ${textColor}`}>{label}</p>
       </div>
     </div>
   )
@@ -192,24 +192,24 @@ function LeadCard({ lead, onStatusChange, onEdit, onDelete, index }) {
   const waLink   = `https://wa.me/91${lead.phone.replace(/\D/g, '')}`
   const buildShareLink = () => {
     const STATUS_LABEL = { pending: 'Pending', contacted: 'Contacted', converted: 'Converted' }
-    const lines = ['📋 *Lead Info — Magic Maths*', '']
-    lines.push(`👤 *Name:* ${lead.applicantName}`)
-    if (lead.isForChild && lead.parentName) lines.push(`👨‍👩‍👦 *Parent:* ${lead.parentName}`)
-    lines.push(`📱 *Phone:* ${lead.phone}`)
-    if (lead.email) lines.push(`📧 *Email:* ${lead.email}`)
-    lines.push(`📚 *Program:* ${lead.course}`)
-    if (lead.branch) lines.push(`🏢 *Branch:* ${lead.branch}`)
-    if (lead.timing) lines.push(`⏰ *Timing:* ${lead.timing}`)
-    if (lead.locality) lines.push(`📍 *Area:* ${lead.locality}`)
-    if (lead.age) lines.push(`🎂 *Age:* ${lead.age}`)
+    const lines = [' *Lead Info — Magic Maths*', '']
+    lines.push(`*Name:* ${lead.applicantName}`)
+    if (lead.isForChild && lead.parentName) lines.push(`*Parent:* ${lead.parentName}`)
+    lines.push(`*Phone:* ${lead.phone}`)
+    if (lead.email) lines.push(`*Email:* ${lead.email}`)
+    lines.push(`*Program:* ${lead.course}`)
+    if (lead.branch) lines.push(`*Branch:* ${lead.branch}`)
+    if (lead.timing) lines.push(`*Timing:* ${lead.timing}`)
+    if (lead.locality) lines.push(`*Area:* ${lead.locality}`)
+    if (lead.age) lines.push(`*Age:* ${lead.age}`)
     lines.push('')
-    lines.push(`🔵 *Status:* ${STATUS_LABEL[lead.status] || lead.status}`)
+    lines.push(`*Status:* ${STATUS_LABEL[lead.status] || lead.status}`)
     if (lead.followUpDate) {
       const d = new Date(lead.followUpDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
-      lines.push(`📅 *Follow-up:* ${d}`)
+      lines.push(`*Follow-up:* ${d}`)
     }
-    if (lead.assignedTo) lines.push(`👨‍💼 *Assigned:* ${lead.assignedTo}`)
-    if (lead.notes) { lines.push(''); lines.push(`📝 *Notes:* ${lead.notes}`) }
+    if (lead.assignedTo) lines.push(`*Assigned:* ${lead.assignedTo}`)
+    if (lead.notes) { lines.push(''); lines.push(`*Notes:* ${lead.notes}`) }
     return `https://wa.me/?text=${encodeURIComponent(lines.join('\n'))}`
   }
 
@@ -448,6 +448,11 @@ export default function CRMDashboard() {
   }, [fetchLeads])
 
   // ── Refresh everything ────────────────────────────────────────────────────
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' })
+    window.location.href = '/server/login'
+  }
+
   const refreshAll = () => {
     fetchLeads()
     fetchStats()
@@ -508,9 +513,9 @@ export default function CRMDashboard() {
         {/* ── Page header ── */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 my-10">
           <div>
-            <h1 className="text-center  poy-2 text-2xl lg:text-4xl font-black text-gray-900 dark:text-gray-50 uppercase">Crm</h1>
+            <h1 className="text-center  poy-2 text-2xl lg:text-4xl font-monument-700 text-gray-900 dark:text-gray-50 uppercase">Crm</h1>
             <p className="text-md  text-muted-foreground font-montserrat-medium mt-0.5 text-center">
-              {total} lead{total !== 1 ? 's' : ''} · Summer Camp 2026
+              {total} lead{total !== 1 ? 's' : ''}
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -527,6 +532,11 @@ export default function CRMDashboard() {
             <button onClick={refreshAll}
               className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-[#262626] text-sm font-semibold text-gray-600 dark:text-gray-300 bg-white dark:bg-[#1a1a1a] hover:bg-gray-50 dark:hover:bg-[#0d0d0d] transition-colors whitespace-nowrap">
               <IconRefresh /><span className="hidden sm:inline">Refresh</span>
+            </button>
+            <button onClick={logout}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-[#262626] text-sm font-semibold text-gray-500 dark:text-gray-400 bg-white dark:bg-[#1a1a1a] hover:bg-red-50 hover:text-red-500 hover:border-red-200 dark:hover:bg-[#1a0000] transition-colors whitespace-nowrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span className="hidden sm:inline">Logout</span>
             </button>
           </div>
         </div>

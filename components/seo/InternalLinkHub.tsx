@@ -25,9 +25,11 @@ export default function InternalLinkHub() {
           <span className="inline-block font-montserrat-700 text-xs uppercase tracking-widest text-indigo-700">
             Explore more
           </span>
+
           <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl tracking-tight text-slate-900">
             Find what fits your child.
           </h2>
+
           <p className="mt-3 font-montserrat-400 text-base text-slate-600">
             Every program, every centre, every link in one place.
           </p>
@@ -35,21 +37,23 @@ export default function InternalLinkHub() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
           {/* PROGRAMS */}
-          <div>
-            <h3 className="flex items-center gap-2 font-monument-700 text-base text-slate-900">
+          <div className="text-center flex flex-col items-center">
+            <h3 className="flex items-center justify-center gap-2 font-monument-700 text-base text-slate-900">
               <span className="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-indigo-700/10 text-indigo-700">
                 <BookOpen size={15} strokeWidth={1.75} />
               </span>
               Programs
             </h3>
-            <ul className="mt-5 space-y-2.5">
+
+            <ul className="mt-5 space-y-2.5 flex flex-col items-center">
               {PROGRAMS.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/programs/${p.slug}`}
-                    className="group inline-flex items-center gap-1 font-montserrat-500 text-sm text-slate-700 hover:text-indigo-700 transition-colors"
+                    className="group inline-flex items-center justify-center gap-1 font-montserrat-500 text-sm text-slate-700 hover:text-indigo-700 transition-colors"
                   >
                     {p.title}
+
                     <ArrowUpRight
                       size={12}
                       className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
@@ -57,6 +61,7 @@ export default function InternalLinkHub() {
                   </Link>
                 </li>
               ))}
+
               <li>
                 <Link
                   href="/programs"
@@ -69,21 +74,23 @@ export default function InternalLinkHub() {
           </div>
 
           {/* LOCATIONS */}
-          <div>
-            <h3 className="flex items-center gap-2 font-monument-700 text-base text-slate-900">
+          <div className="text-center flex flex-col items-center">
+            <h3 className="flex items-center justify-center gap-2 font-monument-700 text-base text-slate-900">
               <span className="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-indigo-700/10 text-indigo-700">
                 <MapPin size={15} strokeWidth={1.75} />
               </span>
               Centres in Chennai
             </h3>
-            <ul className="mt-5 space-y-2.5">
+
+            <ul className="mt-5 space-y-2.5 flex flex-col items-center">
               {LOCATIONS.map((l) => (
                 <li key={l.slug}>
                   <Link
                     href={`/locations/${l.slug}`}
-                    className="group inline-flex items-center gap-1 font-montserrat-500 text-sm text-slate-700 hover:text-indigo-700 transition-colors"
+                    className="group inline-flex items-center justify-center gap-1 font-montserrat-500 text-sm text-slate-700 hover:text-indigo-700 transition-colors"
                   >
                     {l.name}
+
                     <ArrowUpRight
                       size={12}
                       className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
@@ -91,6 +98,7 @@ export default function InternalLinkHub() {
                   </Link>
                 </li>
               ))}
+
               <li>
                 <Link
                   href="/locations"
@@ -103,14 +111,15 @@ export default function InternalLinkHub() {
           </div>
 
           {/* QUICK LINKS + CTA */}
-          <div>
-            <h3 className="flex items-center gap-2 font-monument-700 text-base text-slate-900">
+          <div className="text-center flex flex-col items-center">
+            <h3 className="flex items-center justify-center gap-2 font-monument-700 text-base text-slate-900">
               <span className="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-indigo-700/10 text-indigo-700">
                 <Phone size={15} strokeWidth={1.75} />
               </span>
               Get started
             </h3>
-            <ul className="mt-5 space-y-2.5">
+
+            <ul className="mt-5 space-y-2.5 flex flex-col items-center">
               <li>
                 <Link
                   href="/pricing"
@@ -119,6 +128,7 @@ export default function InternalLinkHub() {
                   Transparent pricing
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/about"
@@ -127,6 +137,7 @@ export default function InternalLinkHub() {
                   About our trainers
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/gallery"
@@ -135,6 +146,7 @@ export default function InternalLinkHub() {
                   Student gallery
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/contact"
@@ -147,7 +159,7 @@ export default function InternalLinkHub() {
 
             <Link
               href="/contact"
-              className="mt-7 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-indigo-800 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+              className="mt-7 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-indigo-700 text-white font-monument text-sm hover:bg-indigo-800 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
             >
               Book Free Demo
               <ArrowUpRight size={14} />
@@ -156,10 +168,11 @@ export default function InternalLinkHub() {
         </div>
 
         {/* Hyperlocal cross-link cloud — high SEO value, low UI noise */}
-        <div className="mt-14 pt-10 border-t border-slate-200">
-          <p className="font-montserrat-700 text-xs uppercase tracking-widest text-slate-500 text-center">
+        <div className="mt-14 pt-10 border-t border-slate-200 text-center">
+          <p className="font-montserrat-700 text-xs uppercase tracking-widest text-slate-500">
             Popular searches near you
           </p>
+
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             {PROGRAMS.flatMap((p) =>
               LOCATIONS.map((l) => ({
@@ -173,7 +186,7 @@ export default function InternalLinkHub() {
                 <Link
                   key={c.key}
                   href={c.href}
-                  className="inline-flex items-center px-3 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-montserrat-500 text-slate-600 hover:border-indigo-700 hover:text-indigo-700 hover:bg-indigo-50/40 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-3 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-montserrat-500 text-slate-600 hover:border-indigo-700 hover:text-indigo-700 hover:bg-indigo-50/40 transition-all duration-300"
                 >
                   {c.label}
                 </Link>
