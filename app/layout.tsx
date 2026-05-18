@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import './fonts.css'
 import { montserrat, monument } from "./fonts";
@@ -71,6 +72,18 @@ export default function RootLayout({
       className={`${montserrat.variable} ${monument.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-montserrat-400">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18155850775"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18155850775');
+          `}
+        </Script>
         {/* Site-wide structured data — emits Organization, Website,
             and LocalBusiness on every page so Google has a single,
             consistent identity to index against. */}
