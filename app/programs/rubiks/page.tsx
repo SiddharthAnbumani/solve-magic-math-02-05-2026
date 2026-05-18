@@ -4,9 +4,17 @@ import type { CubeModule } from '@/components/CubeModuleCard'
 import { RUBIKS } from '@/data/programs'
 
 export const metadata: Metadata = {
-  title: "Rubik's Cube Training — Solve Magic Maths",
+  title: "Rubik's Cube Classes for Kids in Chennai",
   description:
     "Spatial reasoning and pattern thinking through the world's favourite brain toy. Beginner to speedcubing, ages 7–16.",
+  alternates: { canonical: '/programs/rubiks' },
+  openGraph: {
+    title: "Rubik's Cube Classes for Kids in Chennai · Magic Maths",
+    description: "Spatial reasoning and pattern thinking through the world's favourite brain toy. Beginner to speedcubing, ages 7–16.",
+    type: 'website',
+    url: '/programs/rubiks',
+    images: [{ url: '/OG.png', width: 1200, height: 630, alt: "Magic Maths — Rubik's Cube Classes" }],
+  },
 }
 
 const RUBIKS_MODULES: CubeModule[] = [

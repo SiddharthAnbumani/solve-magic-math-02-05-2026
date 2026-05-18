@@ -3,9 +3,18 @@ import AnimatedProgramsGrid from '@/components/AnimatedProgramsGrid'
 import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
-  title: 'Our Programs — Solve Magic Maths',
+  title: 'Our Programs',
   description:
-    'Abacus, Rubik\'s Cube, Vedic Maths and Tuition. Four programs built to grow sharper minds in small batches.',
+    "Abacus, Rubik\'s Cube, Vedic Maths, Tuition, Phonics, Tamil Reading and Handwriting — seven programs built to grow sharper minds in small batches.",
+  alternates: { canonical: '/programs' },
+  openGraph: {
+    title: 'Our Programs · Magic Maths Chennai',
+    description:
+      "Seven programs. One sharper mind. Abacus, Rubik\'s Cube, Vedic Maths and more — taught in small batches across Chennai.",
+    type: 'website',
+    url: '/programs',
+    images: [{ url: '/OG.png', width: 1200, height: 630, alt: 'Magic Maths Programs' }],
+  },
 }
 
 export default function ProgramsPage() {
@@ -18,7 +27,7 @@ export default function ProgramsPage() {
         </h1>
 
         <p className="mt-4 font-montserrat-600 text-lg lg:text-2xl">
-          Four Programs,{' '}
+          Seven Programs,{' '}
           <span className="text-red-400">One Sharper Mind</span>
         </p>
       </section>

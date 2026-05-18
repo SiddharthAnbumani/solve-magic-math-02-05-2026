@@ -23,14 +23,14 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  // CRITICAL — turns every relative canonical / OG image into an absolute
-  // URL anchored to the canonical www domain, regardless of which host
-  // (preview deploy, vercel.app, etc.) actually served the request.
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: TITLE_TEMPLATE },
   description: SITE_DESCRIPTION,
   applicationName: "Magic Maths",
-  alternates: { canonical: "/" },
+  // NO alternates.canonical here — setting canonical:"/" on the root layout
+  // causes every child page that omits alternates to inherit canonical:"/"
+  // (i.e. all program pages point to the homepage). Each route sets its own
+  // canonical explicitly. The homepage canonical is set in app/(home)/layout.tsx.
   openGraph: {
     type: "website",
     siteName: "Magic Maths",
@@ -84,9 +84,6 @@ export default function RootLayout({
             gtag('config', 'AW-18155850775');
           `}
         </Script>
-        {/* Site-wide structured data — emits Organization, Website,
-            and LocalBusiness on every page so Google has a single,
-            consistent identity to index against. */}
         <JsonLd
           data={combine([
             organizationSchema(),
