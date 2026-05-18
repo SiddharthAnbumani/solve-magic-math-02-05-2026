@@ -123,7 +123,7 @@ const WHATSAPP =
 
 export default function Home() {
   return (
-    <main className="bg-white mt-20 sm:mt-25">
+    <main className="bg-white mt-20 sm:mt-20">
       {/* HERO */}
 <VidPlusText
   img="/hero.mp4"

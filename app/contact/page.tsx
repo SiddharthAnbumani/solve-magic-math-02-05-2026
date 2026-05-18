@@ -49,7 +49,7 @@ export default function ContactPage() {
               <BranchCard
                 name="Rajakilpakkam Branch"
                 image="/magic_maths_sembakkam.webp"
-                address="Anna Nagar, Chennai - 600040"
+                address="Rajakilpakkam, Chennai - 600073"
                 phone="7200757754"
                 mapLink="#"
                 email="magicmathslearning@gmail.com"

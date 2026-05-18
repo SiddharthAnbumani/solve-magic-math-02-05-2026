@@ -134,8 +134,8 @@ export const TUITION: Program = {
     { title: 'Practice', description: 'Worksheets, mock tests and timed problem-solving.' },
     { title: 'Revision & Exams', description: 'Past-paper drills, quick revision and exam strategy.' },
   ],
-  ageRange: 'Classes 3–10',
-  duration: 'Year-round · 3 sessions per week',
+  ageRange: 'KG – Class 8',
+  duration: 'Mon–Fri · 6:00–8:00 PM',
   image: '/tuition.jpg',
   cta_image:'/_.webp',
 

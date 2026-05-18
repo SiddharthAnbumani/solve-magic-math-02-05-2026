@@ -1,41 +1,51 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select"
-import { Check } from "lucide-react"
+import { motion } from "framer-motion"
+import { Clock, Calendar, Check } from "lucide-react"
 
-// 🔥 Example pricing map (replace with your real logic/API later)
-const PRICING: Record<string, Record<string, number>> = {
-  "Grade 1": {
-    Abacus: 1500,
-    "Vedic Maths": 1800,
+const TIERS = [
+  {
+    label: "KG",
+    grades: "Kindergarten",
+    price: "₹2,000",
+    duration: "1 hour",
+    features: ["Mon – Fri", "6:00 – 7:00 PM", "Foundational concepts"],
   },
-  "Grade 2": {
-    Abacus: 1600,
-    "Vedic Maths": 2000,
+  {
+    label: "1–2",
+    grades: "Grade 1 & 2",
+    price: "₹2,500",
+    duration: "1.5 hours",
+    features: ["Mon – Fri", "6:00 – 7:30 PM", "Core subject support"],
+    highlight: true,
   },
-  "Grade 3": {
-    Abacus: 1800,
-    "Vedic Maths": 2200,
+  {
+    label: "3–5",
+    grades: "Grade 3 to 5",
+    price: "₹3,000",
+    duration: "2 hours",
+    features: ["Mon – Fri", "6:00 – 8:00 PM", "In-depth curriculum coverage"],
   },
+  {
+    label: "6–8",
+    grades: "Grade 6 to 8",
+    price: "₹3,500",
+    duration: "2 hours",
+    features: ["Mon – Fri", "6:00 – 8:00 PM", "Exam & board prep"],
+  },
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 }
 
-const grades = Object.keys(PRICING)
-const subjects = ["Abacus", "Vedic Maths"]
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+}
 
 export default function TuitionPricingSection() {
-  const [grade, setGrade] = useState(grades[0])
-  const [subject, setSubject] = useState(subjects[0])
-
-  const price = PRICING?.[grade]?.[subject] ?? 0
-
   return (
     <section className="px-6 sm:px-10 lg:px-20 pb-16">
       <motion.div
@@ -43,102 +53,90 @@ export default function TuitionPricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-8xl rounded-3xl bg-red-800 text-white px-8 py-12 lg:p-14"
+        className="mx-auto max-w-8xl"
       >
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-
-          {/* 🔥 LEFT */}
-          <div className="lg:col-span-7">
-            <p className="text-xs uppercase tracking-widest font-montserrat-600 text-red-200">
-              Tuition Fee Calculator
-            </p>
-
-            <h2 className="mt-3 font-monument-700 text-3xl sm:text-4xl lg:text-5xl">
-              Smart Pricing Based on Level
-            </h2>
-
-            <p className="mt-4 text-red-200 max-w-xl leading-relaxed">
-              Select your child’s grade and program to see the exact monthly fee.
-            </p>
-
-            {/* 🔥 SELECTORS */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
-
-              {/* Grade */}
-              <Select value={grade} onValueChange={setGrade}>
-                <SelectTrigger className="w-full sm:w-[200px] bg-white text-black">
-                  <SelectValue placeholder="Select Grade" />
-                </SelectTrigger>
-                <SelectContent>
-                  {grades.map((g) => (
-                    <SelectItem key={g} value={g}>
-                      {g}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Subject */}
-              <Select value={subject} onValueChange={setSubject}>
-                <SelectTrigger className="w-full sm:w-[200px] bg-white text-black">
-                  <SelectValue placeholder="Select Subject" />
-                </SelectTrigger>
-                <SelectContent>
-                  {subjects.map((s) => (
-                    <SelectItem key={s} value={s}>
-                      {s}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-            </div>
+        {/* Header */}
+        <div className="text-center mb-10 space-y-3">
+          <span className="inline-block font-montserrat-700 text-xs uppercase tracking-widest text-indigo-700">
+            Tuition
+          </span>
+          <h2 className="font-monument-700 text-3xl sm:text-4xl tracking-tight text-indigo-800">
+            Grade-wise Tuition Pricing
+          </h2>
+          <div className="flex items-center justify-center gap-6 mt-4 text-slate-600 font-montserrat-500 text-sm">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar size={15} className="text-indigo-600" />
+              Monday – Friday
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock size={15} className="text-indigo-600" />
+              6:00 – 8:00 PM
+            </span>
           </div>
+          <div className="h-px w-20 bg-slate-200 mx-auto mt-4" />
+        </div>
 
-          {/* 🔥 RIGHT PRICE CARD */}
-          <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-white text-red-800 p-6 shadow-lg">
+        {/* Pricing cards */}
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {TIERS.map((tier) => (
+            <motion.div
+              key={tier.label}
+              variants={fadeUp}
+              className={`flex flex-col rounded-3xl border p-7 transition-shadow duration-300 ${
+                tier.highlight
+                  ? "border-indigo-700 shadow-lg bg-white"
+                  : "border-slate-200 bg-white hover:shadow-md"
+              }`}
+            >
+              {/* Grade badge */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-12 h-12 rounded-xl bg-indigo-700 text-white inline-flex items-center justify-center font-monument-700 text-sm">
+                  {tier.label}
+                </div>
+                {tier.highlight && (
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-700 ring-1 ring-red-200 text-[11px] font-montserrat-600 uppercase tracking-widest">
+                    Popular
+                  </span>
+                )}
+              </div>
 
-              <p className="text-sm text-red-500 font-montserrat-600">
-                Estimated Monthly Fee
+              <h3 className="font-monument-700 text-lg text-slate-900">
+                {tier.grades}
+              </h3>
+
+              <div className="mt-3 flex items-baseline gap-1.5">
+                <span className="font-monument-700 text-4xl text-slate-900">
+                  {tier.price}
+                </span>
+                <span className="font-montserrat-500 text-sm text-slate-500">
+                  / month
+                </span>
+              </div>
+
+              <p className="mt-1 font-montserrat-600 text-xs text-indigo-600 uppercase tracking-wide">
+                {tier.duration} per session
               </p>
 
-              {/* 🔥 Animated Price */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={price}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-end gap-2 mt-2"
-                >
-                  <span className="font-monument-700 text-4xl lg:text-5xl">
-                    ₹{price}
-                  </span>
-                  <span className="text-sm text-red-400 mb-1">
-                    / month
-                  </span>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* FEATURES */}
-              <ul className="mt-5 space-y-3">
-                <li className="flex items-center gap-3 text-sm text-gray-700">
-                  <Check size={16} /> Personalized learning
-                </li>
-                <li className="flex items-center gap-3 text-sm text-gray-700">
-                  <Check size={16} /> Weekly assessments
-                </li>
-                <li className="flex items-center gap-3 text-sm text-gray-700">
-                  <Check size={16} /> Progress tracking
-                </li>
+              <ul className="mt-5 space-y-2.5 flex-1">
+                {tier.features.map((f) => (
+                  <li
+                    key={f}
+                    className="flex items-start gap-2.5 font-montserrat-400 text-sm text-slate-700"
+                  >
+                    <Check size={15} className="text-indigo-700 mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
               </ul>
-
-            </div>
-          </div>
-
-        </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   )

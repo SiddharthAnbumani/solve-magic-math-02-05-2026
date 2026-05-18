@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Check, Phone } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calendar, Check, Clock, Phone } from 'lucide-react'
 import type { Program } from '@/data/programs'
 import CubeModuleCard, { type CubeModule } from '@/components/CubeModuleCard'
 
@@ -426,6 +426,88 @@ export default function ProgramPageTemplate({
     </div>
   </section>
 )}
+      {/* TUITION TIMINGS & PRICING */}
+      {program.slug === 'tuition' && (
+        <section className="py-20 lg:py-24 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+            {/* Header */}
+            <div className="text-center mb-12 space-y-3">
+              <span className="inline-block font-montserrat-700 text-xs uppercase tracking-widest text-indigo-700">
+                Schedule & Fees
+              </span>
+              <h2 className="font-monument-700 text-3xl sm:text-4xl tracking-tight text-indigo-800">
+                Class Timings & Pricing
+              </h2>
+              <div className="flex items-center justify-center gap-6 text-slate-600 font-montserrat-500 text-sm pt-2">
+                <span className="inline-flex items-center gap-1.5">
+                  <Calendar size={15} className="text-indigo-600" />
+                  Monday – Friday
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock size={15} className="text-indigo-600" />
+                  6:00 – 8:00 PM
+                </span>
+              </div>
+              <div className="h-px w-20 bg-slate-200 mx-auto" />
+            </div>
+
+            {/* Pricing rows */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                { label: 'KG', subtitle: 'Kindergarten', price: '₹2,000', duration: '1 hour', time: '6:00 – 7:00 PM' },
+                { label: '1 – 2', subtitle: 'Grade 1 & 2', price: '₹2,500', duration: '1.5 hours', time: '6:00 – 7:30 PM', highlight: true },
+                { label: '3 – 5', subtitle: 'Grade 3 to 5', price: '₹3,000', duration: '2 hours', time: '6:00 – 8:00 PM' },
+                { label: '6 – 8', subtitle: 'Grade 6 to 8', price: '₹3,500', duration: '2 hours', time: '6:00 – 8:00 PM' },
+              ].map((tier) => (
+                <div
+                  key={tier.label}
+                  className={`flex flex-col rounded-3xl border p-7 bg-white transition-shadow duration-300 ${
+                    tier.highlight
+                      ? 'border-indigo-700 shadow-lg'
+                      : 'border-slate-200 hover:shadow-md'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-700 text-white inline-flex items-center justify-center font-monument-700 text-xs">
+                      {tier.label}
+                    </div>
+                    {tier.highlight && (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-700 ring-1 ring-red-200 text-[11px] font-montserrat-600 uppercase tracking-widest">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="font-monument-700 text-lg text-slate-900">{tier.subtitle}</h3>
+
+                  <div className="mt-3 flex items-baseline gap-1.5">
+                    <span className="font-monument-700 text-4xl text-slate-900">{tier.price}</span>
+                    <span className="font-montserrat-500 text-sm text-slate-500">/ month</span>
+                  </div>
+
+                  <ul className="mt-5 space-y-2.5">
+                    <li className="flex items-center gap-2.5 font-montserrat-400 text-sm text-slate-700">
+                      <Clock size={14} className="text-indigo-600 shrink-0" />
+                      {tier.duration} per session
+                    </li>
+                    <li className="flex items-center gap-2.5 font-montserrat-400 text-sm text-slate-700">
+                      <Calendar size={14} className="text-indigo-600 shrink-0" />
+                      {tier.time}
+                    </li>
+                    <li className="flex items-center gap-2.5 font-montserrat-400 text-sm text-slate-700">
+                      <Check size={14} className="text-indigo-600 shrink-0" />
+                      Mon – Fri
+                    </li>
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      )}
+
       {/* BENEFITS */}
      <section className="relative overflow-hidden py-24 lg:py-32 bg-indigo-700">
 

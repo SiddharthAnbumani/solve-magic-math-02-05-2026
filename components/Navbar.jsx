@@ -22,15 +22,15 @@ export default function Navbar() {
     <>
       {/* TOP BAR */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-indigo-700 border-b-2 border-black/10">
-        <div className="h-20 sm:h-25 flex items-center justify-between px-4 sm:px-6 md:px-10 w-full">
+        <div className="h-20 sm:h-20 flex items-center justify-between px-4 sm:px-6 md:px-10 w-full">
           {/* Logo */}
           <Link href="/" onClick={closeMenu} className="flex items-center">
-            <img src="/image.png" alt="" className="h-13 sm:h-18" />
+            <img src="/image.png" alt="" className="h-13 sm:h-16" />
           </Link>
 
           {/* Desktop Menu */}
           <div className="h-full flex justify-center items-center">
-            <div className="hidden md:flex items-center space-x-8 text-lg uppercase font-monument-400 text-white">
+            <div className="hidden md:flex items-center space-x-8 text-md uppercase font-monument-400 text-white">
               <Link href="/programs" className="hover:text-red-400 transition-all duration-300 hover:scale-105">Programs</Link>
               <Link href="/programs/tuition" className="hover:text-red-400 transition-all duration-300 hover:scale-105">Tuition</Link>
               <Link href="/pricing" className="hover:text-red-400 transition-all duration-300 hover:scale-105">Pricing</Link>

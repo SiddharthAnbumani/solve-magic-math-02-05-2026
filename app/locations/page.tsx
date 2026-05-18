@@ -10,12 +10,12 @@ import { breadcrumbSchema } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Our Centres Across Chennai',
   description:
-    'Find your nearest Magic Maths centre — Anna Nagar, Velachery, Tambaram, Medavakkam, Chromepet and Sholinganallur. Abacus, Vedic Maths, Tuition and more, taught in small batches.',
+    'Find your nearest Magic Maths centre — Tambaram, Medavakkam, Santhosapuram, Sembakkam and Rajakilpakkam. Abacus, Vedic Maths, Tuition and more, taught in small batches.',
   alternates: { canonical: '/locations' },
   openGraph: {
     title: 'Magic Maths · Centres Across Chennai',
     description:
-      'Six centres serving Chennai families — Abacus, Rubik\'s Cube, Vedic Maths, Phonics, Tamil Reading, Handwriting and Tuition.',
+      'Five centres serving Chennai families — Abacus, Rubik\'s Cube, Vedic Maths, Phonics, Tamil Reading, Handwriting and Tuition.',
     type: 'website',
     url: '/locations',
      images: [
@@ -52,11 +52,11 @@ export default function LocationsIndexPage() {
             Locations
           </span>
           <h1 className="mt-3 font-monument-400 text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
-            Six centres. <br className="hidden sm:block" />
+            Five areas. <br className="hidden sm:block" />
             One <span className="text-red-400">Chennai</span>.
           </h1>
           <p className="mt-6 font-montserrat-400 text-lg lg:text-xl text-white/85 max-w-2xl leading-relaxed">
-            Find the Magic Maths nearest to you. Same small batches, same trainers who know your child by name — across Anna Nagar, Velachery, Tambaram, Medavakkam, Chromepet and Sholinganallur.
+            Find the Magic Maths nearest to you. Same small batches, same trainers who know your child by name — across Tambaram, Medavakkam, Santhosapuram, Sembakkam and Rajakilpakkam.
           </p>
         </div>
       </section>

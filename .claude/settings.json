@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"/Users/siddharthanbumani/Downloads/Desktop - Siddharth's MacBook Pro/Developer/solve/solve-magic-maths-next/\")",
+      "Read(//Users/siddharthanbumani/Downloads/Desktop - Siddharth's MacBook Pro/Developer/solve/**)"
+    ]
+  }
+}

@@ -51,10 +51,9 @@ export const absoluteUrl = (path: string) =>
 
 /** Built-in Chennai areas your business serves. Matches data/locations.ts slugs. */
 export const SERVICE_AREAS: readonly string[] = [
-  'Anna Nagar',
-  'Velachery',
   'Tambaram',
   'Medavakkam',
-  'Chromepet',
-  'Sholinganallur',
+  'Santhosapuram',
+  'Sembakkam',
+  'Rajakilpakkam',
 ]

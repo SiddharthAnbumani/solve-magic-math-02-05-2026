@@ -162,7 +162,7 @@ export default function InternalLinkHub() {
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             {PROGRAMS.flatMap((p) =>
-              LOCATIONS.slice(0, 3).map((l) => ({
+              LOCATIONS.map((l) => ({
                 label: `${p.title} in ${l.name}`,
                 href: `/locations/${l.slug}`,
                 key: `${p.slug}-${l.slug}`,
