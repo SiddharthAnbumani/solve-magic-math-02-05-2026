@@ -43,7 +43,7 @@ const TRUST_PILLARS = [
 
 export default function FreeDemoPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans mt-20">
 
       {/* 1. TRUST STRIP */}
       <div className="bg-indigo-700 text-white text-xs font-semibold px-4 py-2.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 text-center sm:text-left">
@@ -54,7 +54,7 @@ export default function FreeDemoPage() {
       </div>
 
       {/* 2. HERO */}
-      <section className="bg-white px-5 pt-12 pb-16 sm:px-10 lg:px-16">
+      <section className="bg-white px-5 pt-20 pb-16 sm:px-10 lg:px-16">
 
 
         <div className="max-w-7xl mx-auto lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
