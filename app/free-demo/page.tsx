@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import DemoForm from './_components/DemoForm'
+import MediaGrid from './_components/MediaGrid'
 
 export const metadata: Metadata = {
   title: 'Book a Free Demo Class — Magic Maths Chennai | Abacus & Vedic Maths',
@@ -121,6 +122,8 @@ export default function FreeDemoPage() {
         </div>
       </section>
 
+      <MediaGrid />
+
       {/* 3. SOCIAL PROOF BAR */}
       <section className="border-y border-gray-100 bg-indigo-50 py-5 px-5">
         <div className="max-w-3xl mx-auto flex flex-wrap justify-center divide-x divide-gray-200">
@@ -211,6 +214,7 @@ export default function FreeDemoPage() {
           </div>
         </div>
       </section>
+
 
       {/* 7. WHY CHOOSE US */}
       <section className="bg-indigo-50 py-16 px-5 sm:px-10 lg:px-16">

@@ -354,6 +354,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CLASSROOM VIDEOS — before CTA */}
+      <section className="py-16 lg:py-20 bg-indigo-700">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <p className="text-[10px] font-montserrat-700 uppercase tracking-[0.22em] text-red-400 mb-2">
+              Inside Magic Maths
+            </p>
+            <h2 className="font-monument-700 text-2xl sm:text-3xl text-white">
+              See What Happens in Class
+            </h2>
+          </motion.div>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+            style={{ gridAutoRows: 'clamp(180px, 20vw, 280px)' }}
+          >
+            {/* vid_1 — large, 2 col × 2 row */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-2 lg:row-span-2 relative overflow-hidden rounded-2xl bg-black"
+            >
+              <video className="w-full h-full object-contain" autoPlay muted loop playsInline>
+                <source src="/vids/vid_1.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <p className="absolute bottom-3 left-4 text-white text-xs font-montserrat-700">Abacus Class in Session</p>
+            </motion.div>
+
+            {[
+              { src: '/gallery/1.jpeg', alt: 'Students learning', label: 'Learning Together', video: false },
+              { src: '/gallery/2.jpeg', alt: 'Focus and dedication', label: 'Focus & Dedication', video: false },
+              { src: '/vids/vid_2.mp4', alt: '', label: 'Student Demonstration', video: true },
+              { src: '/gallery/3.jpeg', alt: 'Classroom moments', label: 'Classroom Moments', video: false },
+              { src: '/gallery/4.jpeg', alt: 'Student achievement', label: 'Student Achievement', video: false },
+            ].map((m) => (
+              <motion.div
+                key={m.label}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className={`relative overflow-hidden rounded-2xl${m.video ? ' bg-black' : ''}`}
+              >
+                {m.video ? (
+                  <video className="w-full h-full object-contain" autoPlay muted loop playsInline>
+                    <source src={m.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img src={m.src} alt={m.alt} className="w-full h-full object-cover" loading="lazy" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <p className="absolute bottom-3 left-4 text-white text-xs font-montserrat-700">{m.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="text-center mt-8"
+          >
+            <a
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-800 text-white  text-sm font-montserrat-600 hover:scale-105 transition-all duration-200"
+            >
+              View Full Gallery
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* CTA */}
 <section className="py-20 lg:py-24">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
