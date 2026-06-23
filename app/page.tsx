@@ -190,6 +190,14 @@ export default function Home() {
 />
 
 <AboutSection/>
+<div className="pt-10 py-20">
+  <p className='text-indigo-700 font-monument-700 text-4xl sm:text-5xl text-center pt-10 pb-2'>Magic Math's Notice Board</p>
+<p className='font-monument-400 text-red-800/40 text-2xl text-center'>Stay updated with the latest from Magic Maths.</p>
+<div className="flex flex-col sm:flex-row justify-center space-x-10 items-center py-5">
+  <img src="/vedic_poster.png" alt=""  className='h-150 border-2 border-black/30 rounded'/>
+  <img src="/abacus_poster.png" alt="" className='h-150 border-2 border-black/30 rounded' />
+</div> 
+</div>
 <ProgramsSection programs={PROGRAMS} />
 
    <section className="py-24 bg-white">
@@ -440,7 +448,6 @@ export default function Home() {
 
         </div>
       </section>
-
       {/* CTA */}
 <section className="py-20 lg:py-24">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
