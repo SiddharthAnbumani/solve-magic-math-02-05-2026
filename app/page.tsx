@@ -194,8 +194,12 @@ export default function Home() {
   <p className='text-indigo-700 font-monument-700 text-4xl tracking-tight sm:text-5xl text-center pt-10 pb-2'>Magic Math's Notice Board</p>
 <p className='font-montserrat-700 text-red-800  sm:text-2xl text-center tracking-tighter leading-4'>Stay updated with the  latest from Magic Maths.</p>
 <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-10 items-center py-5 px-4 sm:px-0">
+  <Link href='/programs/vedic'>
   <img src="/vedic_poster.png" alt=""  className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded'/>
+  </Link>
+  <Link href='/programs/abacus'>
   <img src="/abacus_poster.png" alt="" className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded' />
+  </Link>
 </div>
 </div>
 <ProgramsSection programs={PROGRAMS} />
