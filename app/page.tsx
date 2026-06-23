@@ -191,12 +191,12 @@ export default function Home() {
 
 <AboutSection/>
 <div className="pt-10 py-20">
-  <p className='text-indigo-700 font-monument-700 text-4xl sm:text-5xl text-center pt-10 pb-2'>Magic Math's Notice Board</p>
-<p className='font-monument-400 text-red-800/40 text-2xl text-center'>Stay updated with the latest from Magic Maths.</p>
-<div className="flex flex-col sm:flex-row justify-center space-x-10 items-center py-5">
-  <img src="/vedic_poster.png" alt=""  className='h-150 border-2 border-black/30 rounded'/>
-  <img src="/abacus_poster.png" alt="" className='h-150 border-2 border-black/30 rounded' />
-</div> 
+  <p className='text-indigo-700 font-monument-700 text-4xl tracking-tight sm:text-5xl text-center pt-10 pb-2'>Magic Math's Notice Board</p>
+<p className='font-montserrat-700 text-red-800  sm:text-2xl text-center tracking-tighter leading-4'>Stay updated with the  latest from Magic Maths.</p>
+<div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-10 items-center py-5 px-4 sm:px-0">
+  <img src="/vedic_poster.png" alt=""  className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded'/>
+  <img src="/abacus_poster.png" alt="" className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded' />
+</div>
 </div>
 <ProgramsSection programs={PROGRAMS} />
 
