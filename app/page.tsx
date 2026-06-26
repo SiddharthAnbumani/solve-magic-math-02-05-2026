@@ -200,6 +200,9 @@ export default function Home() {
   <Link href='/programs/abacus'>
   <img src="/abacus_poster.png" alt="" className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded' />
   </Link>
+  <Link href='/programs/abacus'>
+  <img src="/cube_poster.png" alt="" className='w-4/5 sm:w-auto sm:h-150 border-2 border-black/30 rounded' />
+  </Link>
 </div>
 </div>
 <ProgramsSection programs={PROGRAMS} />
