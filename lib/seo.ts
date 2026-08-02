@@ -21,16 +21,16 @@ export const NAP = {
   phone: '+917200757754',
   phoneDisplay: '+91 7200757754',
   email: 'magicmathslearning@gmail.com',
-  street: 'Chandra Villa, Rajakilpakkam',
+  street: '25, Anna Street, Vengaivasal Main Road, Santhosapuram',
   locality: 'Chennai',
   region: 'TN',
   postalCode: '600073',
   country: 'IN',
   /**
-   * TODO: replace with the real lat/lng of your primary centre.
+   * TODO: replace with the real lat/lng of the Santhosapuram centre.
    * Pull it from Google Maps → right-click → "What's here".
    */
-  geo: { latitude: 12.9281, longitude: 80.1396 },
+  geo: { latitude: 12.9269, longitude: 80.1346 },
 } as const
 
 /** Set these once accounts exist — used in JSON-LD `sameAs`. */

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Brain, Target, Users, Award, MapPin, Star } from 'lucide-react'
 import FounderSection from '@/components/founderSection'
-import BranchCard from '@/components/BranchCard'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -117,11 +116,7 @@ export default function AboutPage() {
       {[
         {
           name: "Santhosapuram",
-          sub: "Flagship center · 100+ students",
-        },
-        {
-          name: "Rajakikpakkam",
-          sub: "Brand New Branch",
+          sub: "Our branch · 100+ students",
         },
         // {
         //   name: "OMR",

@@ -12,7 +12,7 @@ import {
 import BranchCard from '@/components/BranchCard'
 import api from '@/lib/axios'
 
-const BRANCHES = ['Santhosapuram', 'Rajakilpakkam']
+const BRANCHES = ['Santhosapuram']
 
 type FormState = {
   parentName: string
@@ -89,21 +89,13 @@ export default function ContactPage() {
       <section className="px-4 sm:px-10 lg:px-20 py-16 bg-white">
         <div className="max-w-7xl mx-auto space-y-12">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="max-w-xl mx-auto">
             <BranchCard
               name="Santhosapuram Branch"
               image="/magic_maths_sembakkam.webp"
-              address="Chandra Villa, 28/2 Ponniyamman Kovil Street, Rajakilpakkam, Chennai - 600073"
+              address="25, Anna Street, Vengaivasal Main Road, Santhosapuram, Chennai, Tamil Nadu 600073"
               phone="7200757754"
               mapLink="https://share.google/2PtXrwgGvJl5q7Abs"
-              email="magicmathslearning@gmail.com"
-            />
-            <BranchCard
-              name="Rajakilpakkam Branch"
-              image="/magic_maths_sembakkam.webp"
-              address="Rajakilpakkam, Chennai - 600073"
-              phone="7200757754"
-              mapLink="#"
               email="magicmathslearning@gmail.com"
             />
           </div>
@@ -138,7 +130,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-montserrat-600 text-slate-900">Location</p>
                   <p className="text-slate-600 text-sm mt-1">
-                    Chandra Villa, Rajakilpakkam, Chennai - 600073
+                    25, Anna Street, Vengaivasal Main Road, Santhosapuram{'\n'}Chennai, Tamil Nadu 600073
                   </p>
                 </div>
               </div>

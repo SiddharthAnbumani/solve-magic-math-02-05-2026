@@ -86,7 +86,7 @@ export const LOCATIONS: ReadonlyArray<Location> = [
     pincode: '600073',
     geo: { latitude: 12.9269, longitude: 80.1346 },
     intro:
-      'Magic Maths Santhosapuram brings structured brain-development classes right into the heart of this growing neighbourhood. Small batches of eight students mean every child in the room gets individual attention — never lost in a crowd.',
+      'Magic Maths Santhosapuram is our flagship — and only — centre, at 25 Anna Street, Vengaivasal Main Road. Small batches of eight students mean every child in the room gets individual attention — never lost in a crowd.',
     why:
       'Santhosapuram families value convenience alongside quality. Our evening batches fit cleanly around school hours, homework time and family dinners — no long commute, no compromise on the programme.',
     landmarks: [
@@ -134,13 +134,13 @@ export const LOCATIONS: ReadonlyArray<Location> = [
     pincode: '600073',
     geo: { latitude: 12.9281, longitude: 80.1396 },
     intro:
-      'Rajakilpakkam is home to our flagship centre — Chandra Villa on Ponniyamman Kovil Street. Everything about Magic Maths was built and tested here first: the small-batch model, the level-based progression, the parent-feedback cycle. What works for Rajakilpakkam families, works.',
+      'Rajakilpakkam families are just minutes from our Santhosapuram centre — the small-batch model, the level-based progression, the parent-feedback cycle, all a short ride away on Vengaivasal Main Road.',
     why:
-      'As our primary centre, Rajakilpakkam gets the earliest time slots, the most experienced trainers, and the widest range of programmes running simultaneously. Parents looking for the full Magic Maths experience start here.',
+      'We hear from a lot of Rajakilpakkam parents looking for a nearby centre that doesn\'t compromise on batch size or trainer attention. Our Santhosapuram centre serves this area with evening batches timed around the school day.',
     landmarks: [
       'Ponniyamman Kovil Street',
       'Rajakilpakkam Bus Stop',
-      'Chandra Villa',
+      'Vengaivasal Main Road',
       'Sembakkam Lake Road',
     ],
     nearbyAreas: [
@@ -150,7 +150,7 @@ export const LOCATIONS: ReadonlyArray<Location> = [
       'Tambaram',
       'Selaiyur',
     ],
-    hero: { image: '/_.webp', alt: 'Magic Maths Rajakilpakkam flagship centre' },
+    hero: { image: '/_.webp', alt: 'Magic Maths serving Rajakilpakkam families' },
   },
 ]
 

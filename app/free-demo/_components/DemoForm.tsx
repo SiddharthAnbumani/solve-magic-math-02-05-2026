@@ -13,7 +13,7 @@ const PROGRAMS = [
   'Not Sure Yet',
 ]
 
-const CENTRES = ['Santhosapuram', 'Rajakilpakkam', 'No Preference']
+const CENTRES = ['Santhosapuram']
 
 type Field = {
   parentName: string
